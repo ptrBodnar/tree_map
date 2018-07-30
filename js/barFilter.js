@@ -12,8 +12,8 @@
         .entries(data);
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
-        width = 660 - margin.left - margin.right,
-        height = 200 - margin.top - margin.bottom;
+        width = 460 - margin.left - margin.right,
+        height = 150 - margin.top - margin.bottom;
 
 // set the ranges
     var x = d3.scaleBand()
@@ -58,11 +58,11 @@
                     return {color: 'rgba(0,0,0,0)'}
             });
             geojsonLayerBranch.setStyle(function(feature){
-                if (feature.properties.values[0].date_UTF.split(".")[1] === d.key.slice(0,2))
+                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.slice(0,2)))
                     return {color: 'rgba(0,0,0,0)'}
             });
             geojsonLayerPlanted.setStyle(function(feature){
-                if (feature.properties.values[0].date_UTF.split(".")[1] === d.key.slice(0,2))
+                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.slice(0,2)))
                     return {color: 'rgba(0,0,0,0)'}
             });
         });

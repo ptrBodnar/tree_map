@@ -120,9 +120,6 @@ function createMap(data, branch, planted) {
         var streets = [];
         var actNumber = [];
 
-        console.log(event.layer.feature.properties.values);
-
-
         d3.select("div.mystyle").style("display", "flex")
         d3.selectAll(".mystyle *").remove();
 
