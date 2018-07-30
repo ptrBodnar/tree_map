@@ -3,6 +3,9 @@
  */
 
 function createMap(data, branch, planted) {
+    d3.selectAll(".leaflet-interactive").remove();
+    //d3.selectAll(".leaflet-control-layers-toggle").remove();
+
     var color = d3.scaleLinear().domain([0, 10])
         .range(['#70B5DC', '#0075B4']);
 
@@ -31,31 +34,7 @@ function createMap(data, branch, planted) {
         return geojson
 
     }
-
-
-    geojsonLayer = L.geoJson(nested_geojson(data), {
-        style: function (feature) {
-            var sumCut = 0;
-            feature.properties.values.forEach(function (d) {
-                sumCut += +d.was_cut;
-            })
-            return {color: color(sumCut)};
-        },
-        pointToLayer: function (feature, latlng) {
-            var sumNumber = 0;
-            feature.properties.values.forEach(function (d) {
-                sumNumber += +d.number
-            })
-
-            if (sumNumber < 3) {
-                sumNumber = 3;
-            }
-            if (sumNumber > 15) {
-                sumNumber = 15;
-            }
-            return new L.CircleMarker(latlng, {radius: sumNumber, fillOpacity: 0.75});
-        }
-    });
+    
 
     geojsonLayer = L.geoJson(nested_geojson(data), {
         style: function (feature) {
@@ -124,10 +103,12 @@ function createMap(data, branch, planted) {
     });
 
 
+
     mymap.addLayer(geojsonLayer);
 
 
-    var overlayMaps = {
+
+    overlayMaps = {
         "Зрубування дерев": geojsonLayer,
         "Обрізання дерев": geojsonLayerBranch,
         "Висадження нових дерев": geojsonLayerPlanted
@@ -135,57 +116,73 @@ function createMap(data, branch, planted) {
 
     L.control.layers(overlayMaps).addTo(mymap);
 
-    mymap.on('baselayerchange', function (e) {
-        e.layer.on("click", function (event) {
+    geojsonLayer.on("click", function (event) {
+        var streets = [];
+        var actNumber = [];
 
-            var streets = [];
-            var actNumber = [];
-
-
-            d3.select("div.mystyle").style("display", "flex")
-            d3.selectAll(".mystyle *").remove();
-
-            var totalTree = d3.sum(event.layer.feature.properties.values, function (d) {
-                return +d.number
-            });
-            var totalCut = d3.sum(event.layer.feature.properties.values, function (d) {
-                return +d.was_cut
-            });
+        console.log(event.layer.feature.properties.values);
 
 
-            d3.select(".mystyle").append("p").attr("class", "total").text("Загальна кількість дерев: "
-                + totalTree + " " + "Зрубано: " + totalCut);
+        d3.select("div.mystyle").style("display", "flex")
+        d3.selectAll(".mystyle *").remove();
 
-            var element = d3.select(".mystyle")
-                .selectAll(".element")
-                .data(event.layer.feature.properties.values)
-                .enter()
-                .append("div")
-                .attr("class", "element");
-
-
-            element.append("h4").text(function (d) {
-                if (!streets.includes(d.tree_adress_shorten)) {
-                    streets.push(d.tree_adress_shorten)
-                    return d.tree_adress_shorten
-                }
-            })
-
-
-            element.append("h5").text(function (d) {
-                if (!actNumber.includes(d.act_number)) {
-                    actNumber.push(d.act_number)
-                    return d.act_number
-                }
-            })
-
-            element.append("p").text(function (d) {
-                totalTree += +d.number;
-                totalCut += +d.was_cut;
-
-                return d.tree_characteristics + " Заплановано: " + d.number + " Вже зрубано: " + d.was_cut
-            })
-
+        var totalTree = d3.sum(event.layer.feature.properties.values, function (d) {
+            return +d.number
         });
+        var totalCut = d3.sum(event.layer.feature.properties.values, function (d) {
+            return +d.was_cut
+        });
+
+
+        d3.select(".mystyle").append("p").attr("class", "total").text("Загальна кількість дерев: "
+            + totalTree + " " + "Зрубано: " + totalCut);
+
+        var element = d3.select(".mystyle")
+            .selectAll(".element")
+            .data(event.layer.feature.properties.values)
+            .enter()
+            .append("div")
+            .attr("class", "element");
+
+
+        element.append("h4").text(function (d) {
+            if (!streets.includes(d.tree_adress_shorten)) {
+                streets.push(d.tree_adress_shorten)
+                return d.tree_adress_shorten
+            }
+        })
+
+
+        element.append("h5").text(function (d) {
+            if (!actNumber.includes(d.act_number)) {
+                actNumber.push(d.act_number)
+                return d.act_number
+            }
+        })
+
+        element.append("p").text(function (d) {
+            totalTree += +d.number;
+            totalCut += +d.was_cut;
+
+            return d.tree_characteristics + " Заплановано: " + d.number + " Вже зрубано: " + d.was_cut
+        })
+    })
+
+
+    mymap.on('baselayerchange', function (e) {
+        addPopUp(e);
+        if (e.name == 'Зрубування дерев') {
+            createBar(data);
+        }
+        if (e.name == 'Обрізання дерев') {
+            createBar(branch);
+        }
+        if (e.name == 'Висадження нових дерев') {
+            createBar(planted);
+        }
+
     });
+
+
 }
+

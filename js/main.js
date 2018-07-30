@@ -17,11 +17,10 @@ d3.queue()
     .defer(d3.csv, "data/tree_planted.csv")
     .await(function (err, data, branch, planted) {
         if (err) throw err;
-
-
+        
         createMap(data, branch, planted);
         createBar(data);
-        
 
 
     })
+
