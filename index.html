@@ -28,22 +28,28 @@
         }
 
         .wrapper {
-            width: 70%;
-            margin: 0 auto;
-            position: relative;
-            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
         }
+
+
 
         .mapBottomNavigation {
             width: 100%;
             margin: 0 auto;
-            position: fixed;
-            bottom: 0px;
+            /*position: fixed;*/
+            grid-row: 4;
+            grid-column: 2;
         }
 
         .button, .bars {
             display: inline-block;
             vertical-align: middle;
+        }
+
+        .tick {
+            stroke: white;
         }
 
     </style>
@@ -52,6 +58,8 @@
 <body>
 <div id="mapid"></div>
 <div class="wrapper">
+    <div></div>
+    <div></div>
     <div class="mystyle"></div>
     <div class="mapBottomNavigation">
         <div class="bars"></div>
