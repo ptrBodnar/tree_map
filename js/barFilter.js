@@ -4,10 +4,12 @@
 
  function createBar(data, branch, planted) {
 
+
+
    d3.selectAll(".bars *").remove();
 
     var barChartData = d3.nest()
-        .key(function(d) { if (d.date_UTF === "") {return "notCutYet"} else {return d.date_UTF.slice(3)}})
+        .key(function(d) { return d.date_UTF.slice(3)})
         .rollup(function(v) { return d3.sum(v, function(d) { return +d.was_cut }); })
         .entries(data);
 
@@ -30,6 +32,8 @@
         .attr("transform",
             "tsranslate(" + margin.left + "," + margin.top + ")");
 
+    var parseDate = d3.timeParse("%m.%Y");
+
 
     x.domain(barChartData.map(function(d) { return d.key; }));
     y.domain([0, d3.max(barChartData, function(d) { return d.value; })]);
@@ -49,7 +53,7 @@
         .attr("width", x.bandwidth())
         .attr("y", function(d) { return y(d.value); })
         .attr("height", function(d) { return height - y(d.value); })
-        .attr("fill", "red")
+        .attr("fill", "white")
         .attr("position", "centered")
         .on("click", function (d) {
             returnColors();

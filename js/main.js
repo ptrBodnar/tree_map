@@ -12,9 +12,9 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 
 d3.queue()
-    .defer(d3.csv, "data/cleaned_tree.csv")
-    .defer(d3.csv, "data/branch.csv")
-    .defer(d3.csv, "data/tree_planted.csv")
+    .defer(d3.csv, "data/cleaned_tree_2.csv")
+    .defer(d3.csv, "data/branch_2.csv")
+    .defer(d3.csv, "data/tree_planted_2.csv")
     .await(function (err, data, branch, planted) {
         if (err) throw err;
         

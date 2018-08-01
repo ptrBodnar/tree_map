@@ -117,7 +117,6 @@ function createMap(data, branch, planted) {
     L.control.layers(overlayMaps).addTo(mymap);
 
     geojsonLayer.on("click", function (event) {
-        debugger;
         var streets = [];
         var actNumber = [];
 
