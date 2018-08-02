@@ -10,6 +10,7 @@
 
     var barChartData = d3.nest()
         .key(function(d) { return d.date_UTF.slice(3)})
+        .sortKeys(d3.ascending)
         .rollup(function(v) { return d3.sum(v, function(d) { return +d.was_cut }); })
         .entries(data);
 
