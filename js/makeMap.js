@@ -4,10 +4,8 @@
 
 function createMap(data, branch, planted) {
     d3.selectAll(".leaflet-interactive").remove();
-    //d3.selectAll(".leaflet-control-layers-toggle").remove();
-
-    var color = d3.scaleLinear().domain([0, 10])
-        .range(['#70B5DC', '#0075B4']);
+    d3.selectAll(".leaflet-control-layers-toggle").remove();
+    
 
 
     function nested_geojson(data) {
@@ -34,17 +32,29 @@ function createMap(data, branch, planted) {
         return geojson
 
     }
-    
+
+    // function styleForLayer(feature) {
+    //     var sumCut = 0;
+    //     feature.properties.values.forEach(function (d) {
+    //         sumCut += +d.was_cut;
+    //     });
+    //
+    //     var sumNonCutYet = 0;
+    //     feature.properties.values.forEach(function (d) {
+    //         sumNonCutYet += +d.number;
+    //     });
+    //     return {color: color(sumCut/(sumNonCutYet+ 0.1)*10)};
+    // }
 
     geojsonLayer = L.geoJson(nested_geojson(data), {
         style: function (feature) {
+            return styleForLayer(feature)
+        },
+        pointToLayer: function (feature, latlng) {
             var sumCut = 0;
             feature.properties.values.forEach(function (d) {
                 sumCut += +d.was_cut;
-            })
-            return {color: color(sumCut)};
-        },
-        pointToLayer: function (feature, latlng) {
+            });
             var sumNumber = 0;
             feature.properties.values.forEach(function (d) {
                 sumNumber += +d.number
@@ -62,11 +72,7 @@ function createMap(data, branch, planted) {
 
     geojsonLayerBranch = L.geoJson(nested_geojson(branch), {
         style: function (feature) {
-            var sumCut = 0;
-            feature.properties.values.forEach(function (d) {
-                sumCut += +d.was_cut;
-            })
-            return {color: color(sumCut)};
+            return styleForLayer(feature);
         },
         pointToLayer: function (feature, latlng) {
             var sumNumber = 0;
@@ -85,7 +91,13 @@ function createMap(data, branch, planted) {
     });
 
     geojsonLayerPlanted = L.geoJson(nested_geojson(planted), {
-        style: {color: "green"},
+        style: function (feature) {
+            var sumCut = 0;
+            feature.properties.values.forEach(function (d) {
+                sumCut += +d.was_cut;
+            })
+            return {color: color(sumCut)};
+        },
         pointToLayer: function (feature, latlng) {
             var sumNumber = 0;
             feature.properties.values.forEach(function (d) {
@@ -101,12 +113,9 @@ function createMap(data, branch, planted) {
             return new L.CircleMarker(latlng, {radius: sumNumber, fillOpacity: 0.75});
         }
     });
-
-
-
+    
     mymap.addLayer(geojsonLayer);
-
-
+    
 
     overlayMaps = {
         "Зрубування дерев": geojsonLayer,
@@ -129,8 +138,7 @@ function createMap(data, branch, planted) {
         var totalCut = d3.sum(event.layer.feature.properties.values, function (d) {
             return +d.was_cut
         });
-
-
+        
         d3.select(".mystyle").append("p").attr("class", "total").text("Загальна кількість дерев: "
             + totalTree + " " + "Зрубано: " + totalCut);
 

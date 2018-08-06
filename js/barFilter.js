@@ -3,16 +3,25 @@
  */
 
  function createBar(data, branch, planted) {
+    
+
 
 
 
    d3.selectAll(".bars *").remove();
 
+    data = data
+        .filter(function(d){return d.date_UTF !== "NotYet" && d.date_UTF !== "1"})
+        .filter(function(d){return d.date_UTF});
+
     var barChartData = d3.nest()
-        .key(function(d) { return d.date_UTF.slice(3)})
+        .key(function(d) {return d.date_UTF.slice(3)})
         .sortKeys(d3.ascending)
-        .rollup(function(v) { return d3.sum(v, function(d) { return +d.was_cut }); })
+        .rollup(function(v) { return d3.sum(v, function(d) { return +d.number }); })
         .entries(data);
+
+    console.log(barChartData);
+    debugger;
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = 460 - margin.left - margin.right,
@@ -34,13 +43,13 @@
             "tsranslate(" + margin.left + "," + margin.top + ")");
 
     var parseDate = d3.timeParse("%m.%Y");
+    var date_format = d3.timeFormat("%b.%Y")
 
+    barChartData.forEach(function(d){d.key=parseDate(d.key)});
 
-    x.domain(barChartData.map(function(d) { return d.key; }));
+    x.domain(barChartData, barChartData.map(function(d){return d.key}));
     y.domain([0, d3.max(barChartData, function(d) { return d.value; })]);
 
-    var color = d3.scaleLinear().domain([0, 10])
-        .range(['#70B5DC', '#0075B4']);
 
 // append the rectangles for the bar chart
     svg.selectAll(".bar")
@@ -59,7 +68,7 @@
         .on("click", function (d) {
             returnColors();
             geojsonLayer.setStyle(function(feature){
-                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.slice(0,2)))
+                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key))
                     return {color: 'rgba(0,0,0,0)'}
             });
             geojsonLayerBranch.setStyle(function(feature){
@@ -76,30 +85,17 @@
         returnColors();
     })
 
+
     function returnColors() {
-        var color = d3.scaleLinear().domain([0, 10])
-        .range(['#70B5DC', '#0075B4']);
 
         geojsonLayer.setStyle(function(feature){
-            var sumCut = 0;
-            feature.properties.values.forEach(function (d) {
-                sumCut += +d.was_cut;
-            })
-            return {color: color(sumCut)};
+            return styleForLayer(feature);
         });
         geojsonLayerBranch.setStyle(function(feature){
-            var sumCut = 0;
-            feature.properties.values.forEach(function (d) {
-                sumCut += +d.was_cut;
-            })
-            return {color: color(sumCut)};
+            return styleForLayer(feature);
         });
         geojsonLayerPlanted.setStyle(function(feature){
-            var sumCut = 0;
-            feature.properties.values.forEach(function (d) {
-                sumCut += +d.was_cut;
-            })
-            return {color: color(sumCut)};
+            return styleForLayer(feature);
         });
     }
 
@@ -107,7 +103,7 @@
 // add the x Axis
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(x).tickFormat(date_format));
 
 // add the y Axis
     svg.append("g")
