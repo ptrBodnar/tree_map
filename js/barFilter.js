@@ -84,15 +84,15 @@
             returnColors();
             geojsonLayer.setStyle(function(feature){
                 if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.split(".")[1]))
-                    return {color: 'rgba(0,0,0,0)'}
+                    return {fillColor: 'rgba(0,0,0,0)'}
             });
             geojsonLayerBranch.setStyle(function(feature){
                 if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.split(".")[1]))
-                    return {color: 'rgba(0,0,0,0)'}
+                    return {fillColor: 'rgba(0,0,0,0)'}
             });
             geojsonLayerPlanted.setStyle(function(feature){
                 if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.split(".")[1]))
-                    return {color: 'rgba(0,0,0,0)'}
+                    return {fillColor: 'rgba(0,0,0,0)'}
             });
         });
 
