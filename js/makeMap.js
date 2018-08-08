@@ -66,7 +66,7 @@ function createMap(data, branch, planted) {
             if (sumNumber > 15) {
                 sumNumber = 15;
             }
-            return new L.CircleMarker(latlng, {radius: sumNumber, fillOpacity: 0.75});
+            return new L.CircleMarker(latlng, {radius: sumNumber * 2, fillOpacity: 0.5});
         }
     });
 
@@ -123,7 +123,7 @@ function createMap(data, branch, planted) {
         "Висадження нових дерев": geojsonLayerPlanted
     };
 
-    L.control.layers(overlayMaps).addTo(mymap);
+    L.control.layers(overlayMaps,null,{collapsed:false}).addTo(mymap);
 
     geojsonLayer.on("click", function (event) {
         var streets = [];
@@ -187,6 +187,26 @@ function createMap(data, branch, planted) {
         }
 
     });
+
+    var legend = L.control({position: 'topright'});
+
+    legend.onAdd = function (map) {
+
+
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = ["#c90737", "#99bb06"],
+            labels = ["Зрубані дерева","Дерева які ще зрубають"];
+
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+                '<i style="background:' + grades[i] + '"></i> ' + " " + labels[i] +'<br>';
+        }
+
+        return div;
+    };
+
+    legend.addTo(mymap);
 
 
 }

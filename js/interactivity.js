@@ -8,6 +8,7 @@ function addPopUp(e) {
 
             d3.select("div.mystyle").style("display", "flex")
             d3.selectAll(".mystyle *").remove();
+            d3.selectAll(".legend *").remove();
 
             var totalTree = d3.sum(event.layer.feature.properties.values, function (d) {
                 return +d.number

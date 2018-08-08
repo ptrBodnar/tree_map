@@ -3,10 +3,6 @@
  */
 
  function createBar(data, branch, planted) {
-    
-
-
-
 
    d3.selectAll(".bars *").remove();
 
@@ -20,8 +16,10 @@
         .rollup(function(v) { return d3.sum(v, function(d) { return +d.number }); })
         .entries(data);
 
-    console.log(barChartData);
-    debugger;
+    barChartData.forEach(function (d) {
+        d.key = swapMonthAndYear(d.key);
+    });
+    
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = 460 - margin.left - margin.right,
@@ -30,7 +28,7 @@
 // set the ranges
     var x = d3.scaleBand()
         .range([0, width])
-        .padding(0.1);
+        .padding(0.25);
     var y = d3.scaleLinear()
         .range([height, 0]);
 
@@ -42,14 +40,31 @@
         .attr("transform",
             "tsranslate(" + margin.left + "," + margin.top + ")");
 
-    var parseDate = d3.timeParse("%m.%Y");
-    var date_format = d3.timeFormat("%b.%Y")
+    var parseInputDate = d3.timeParse("%y.%m");
+    var formatInputDate = d3.timeFormat("%y.%m");
 
-    barChartData.forEach(function(d){d.key=parseDate(d.key)});
+    //
+    var dateToTick = d3.timeFormat("%b %Y");
+    var outputDateFormat = function(str) {return dateToTick(parseInputDate(str)); };
+    //
 
-    x.domain(barChartData, barChartData.map(function(d){return d.key}));
+    // barChartData.forEach(function(d){d.key=parseDate(d.key)});
+    // barChartData.map(function(d){return d.key})
+
+    var minMonth = d3.min(barChartData.map(function(d){return d.key}));
+    var x_domain = [];
+
+    for (var i = 0; i < 12; i++) {
+        x_domain.push(addMonths(minMonth, i));
+    }
+
+    console.log("x_domain");
+    console.log(x_domain);
+
+    x.domain(x_domain);
     y.domain([0, d3.max(barChartData, function(d) { return d.value; })]);
 
+    debugger;
 
 // append the rectangles for the bar chart
     svg.selectAll(".bar")
@@ -68,15 +83,15 @@
         .on("click", function (d) {
             returnColors();
             geojsonLayer.setStyle(function(feature){
-                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key))
+                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.split(".")[1]))
                     return {color: 'rgba(0,0,0,0)'}
             });
             geojsonLayerBranch.setStyle(function(feature){
-                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.slice(0,2)))
+                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.split(".")[1]))
                     return {color: 'rgba(0,0,0,0)'}
             });
             geojsonLayerPlanted.setStyle(function(feature){
-                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.slice(0,2)))
+                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.split(".")[1]))
                     return {color: 'rgba(0,0,0,0)'}
             });
         });
@@ -102,12 +117,20 @@
 
 // add the x Axis
     svg.append("g")
+        .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).tickFormat(date_format));
+        .call(d3.axisBottom(x).tickFormat(outputDateFormat));
 
 // add the y Axis
     svg.append("g")
         .call(d3.axisLeft(y));
 
-    
+    function addMonths(str, n) {
+        return moment(str, "YY.MM").add(n, "month").format("YY.MM");
+    }
+
+    function swapMonthAndYear(str) {
+        var a = str.split(".");
+        return a[1] + "." + a[0];
+    }
 } 

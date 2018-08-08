@@ -11,7 +11,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(mymap);
 
 var color = d3.scaleLinear().domain([0, 10])
-    .range(['#008D9E', '#FAA61A']);
+    .range(['#ac3f00', '#33981b']);
 
 function styleForLayer(feature) {
 
@@ -20,25 +20,28 @@ function styleForLayer(feature) {
     //     totalTrees += +d.number;
     // });
     if (feature.properties.values[0].was_cut == 'True') {
-        return {color: "#FAA61A"};
+        return {fillColor: "#c90737", color: "rgba(0, 0, 0, 0);"};
     }
     else {
-        return {color: "#008D9E"} ;
+        return {fillColor: "#99bb06", color: "rgba(0, 0, 0, 0);"} ;
     }
 }
 
-d3.queue()
-    .defer(d3.csv, "data/cleaned_tree_2.csv")
-    .defer(d3.csv, "data/branch_2.csv")
-    .defer(d3.csv, "data/tree_planted_2.csv")
-    .await(function (err, data, branch, planted) {
-        if (err) throw err;
-        console.log(data);
-        createMap(data, branch, planted);
-        createBar(data, branch, planted);
+    d3.queue()
+        .defer(d3.csv, "data/cleaned_tree_3_less.csv")
+        .defer(d3.csv, "data/branch_2.csv")
+        .defer(d3.csv, "data/tree_planted_2.csv")
+        .await(function (err, data, branch, planted) {
+            if (err) throw err;
+            createMap(data, branch, planted);
+            createBar(data, branch, planted);
 
 
-    })
+        });
+
+
+
+
 
 
 
