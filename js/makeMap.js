@@ -10,109 +10,138 @@ function createMap(data, branch, planted) {
 
     function nested_geojson(data) {
 
-        var nested = d3.nest()
-            .key(function (d) {
-                return "" + d.Latitude + "," + d.Longitude
-            })
-            .entries(data);
+        result_list = [];
+
+        function makeObjectCopy(n, obj) {
+            var results = [];
+            for (var i = 0; i < n; i++) {
+                result_list.push(obj);
+            }
+            //return results;
+        }
+
+        data.forEach(function(d) {
+            if (+d.number <= 1) {
+                result_list.push(d)
+            }
+            else {
+                makeObjectCopy(+d.number, d);
+                // copied_list.forEach(function (copy) {
+                //     result_list.push(copy);
+                // })
+            }
+        });
+
+        result_list.forEach(function (obj) {
+
+            obj["LatLon13"] = [+obj.Longitude + (getRandomArbitrary(-0.005,0.005)),
+                +obj.Latitude + (getRandomArbitrary(-0.005,0.005))];
+
+            obj["LatLon14"] = [+obj.Longitude + (getRandomArbitrary(-0.004,0.004)),
+                                +obj.Latitude + (getRandomArbitrary(-0.004,0.004))];
+
+            obj["LatLon15"] = [+obj.Longitude + (getRandomArbitrary(-0.003,0.003)),
+                                +obj.Latitude + (getRandomArbitrary(-0.003,0.003))];
+
+            obj["LatLon16"] = [+obj.Longitude + (getRandomArbitrary(-0.002,0.002)),
+                                +obj.Latitude + (getRandomArbitrary(-0.002,0.002))];
+
+            obj["LatLon17"] = [+obj.Longitude + (getRandomArbitrary(-0.001,0.001)),
+                                +obj.Latitude + (getRandomArbitrary(-0.001,0.001))];
+
+            obj["LatLon18"] = [+obj.Longitude + (getRandomArbitrary(-0.0005,0.0005)),
+                                +obj.Latitude + (getRandomArbitrary(-0.0005,0.0005))];
+
+            obj.Longitude = +obj.Longitude + (getRandomArbitrary(-0.005,0.005));
+
+            obj.Latitude = +obj.Latitude + (getRandomArbitrary(-0.005,0.005));
+        });
+        
 
 
-        var geojson = nested.map(function (d) {
-            var a = d.key.split(",");
+        var geojson = result_list.map(function (d) {
             return {
                 type: "Feature",
                 properties: d,
                 geometry: {
                     type: "Point",
-                    coordinates: [+a[1], +a[0]]
+                    coordinates: [+d.Longitude, +d.Latitude]
                 }
             }
-        })
+        });
 
         return geojson
 
     }
 
-    // function styleForLayer(feature) {
-    //     var sumCut = 0;
-    //     feature.properties.values.forEach(function (d) {
-    //         sumCut += +d.was_cut;
-    //     });
-    //
-    //     var sumNonCutYet = 0;
-    //     feature.properties.values.forEach(function (d) {
-    //         sumNonCutYet += +d.number;
-    //     });
-    //     return {color: color(sumCut/(sumNonCutYet+ 0.1)*10)};
-    // }
 
     geojsonLayer = L.geoJson(nested_geojson(data), {
         style: function (feature) {
             return styleForLayer(feature)
         },
         pointToLayer: function (feature, latlng) {
-            var sumCut = 0;
-            feature.properties.values.forEach(function (d) {
-                sumCut += +d.was_cut;
-            });
-            var sumNumber = 0;
-            feature.properties.values.forEach(function (d) {
-                sumNumber += +d.number
-            })
-
-            if (sumNumber < 3) {
-                sumNumber = 3;
-            }
-            if (sumNumber > 15) {
-                sumNumber = 15;
-            }
-            return new L.CircleMarker(latlng, {radius: sumNumber * 2, fillOpacity: 0.5});
+            // var sumCut = 0;
+            // feature.properties.values.forEach(function (d) {
+            //     sumCut += +d.was_cut;
+            // });
+            // var sumNumber = 0;
+            // feature.properties.values.forEach(function (d) {
+            //     sumNumber += +d.number
+            // })
+            //
+            // if (sumNumber < 3) {
+            //     sumNumber = 3;
+            // }
+            // if (sumNumber > 15) {
+            //     sumNumber = 15;
+            // }
+            return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.75});
         }
     });
 
+    console.log(geojsonLayer);
+
+   
     geojsonLayerBranch = L.geoJson(nested_geojson(branch), {
         style: function (feature) {
             return styleForLayer(feature);
         },
         pointToLayer: function (feature, latlng) {
-            var sumNumber = 0;
-            feature.properties.values.forEach(function (d) {
-                sumNumber += +d.number
-            })
-
-            if (sumNumber < 3) {
-                sumNumber = 3;
-            }
-            if (sumNumber > 15) {
-                sumNumber = 15;
-            }
-            return new L.CircleMarker(latlng, {radius: sumNumber, fillOpacity: 0.75});
+            // var sumNumber = 0;
+            // feature.properties.values.forEach(function (d) {
+            //     sumNumber += +d.number
+            // })
+            //
+            // if (sumNumber < 3) {
+            //     sumNumber = 3;
+            // }
+            // if (sumNumber > 15) {
+            //     sumNumber = 15;
+            // }
+            return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.75});
         }
     });
 
     geojsonLayerPlanted = L.geoJson(nested_geojson(planted), {
         style: function (feature) {
-            var sumCut = 0;
-            feature.properties.values.forEach(function (d) {
-                sumCut += +d.was_cut;
-            })
-            return {color: color(sumCut)};
+            return styleForLayer(feature);;
         },
         pointToLayer: function (feature, latlng) {
-            var sumNumber = 0;
-            feature.properties.values.forEach(function (d) {
-                sumNumber += +d.number
-            })
-
-            if (sumNumber < 3) {
-                sumNumber = 3;
-            }
-            if (sumNumber > 15) {
-                sumNumber = 15;
-            }
-            return new L.CircleMarker(latlng, {radius: sumNumber, fillOpacity: 0.75});
+            // var sumNumber = 0;
+            // feature.properties.values.forEach(function (d) {
+            //     sumNumber += +d.number
+            // })
+            //
+            // if (sumNumber < 3) {
+            //     sumNumber = 3;
+            // }
+            // if (sumNumber > 15) {
+            //     sumNumber = 15;
+            // }
+            return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.75});
         }
     });
+
     
     mymap.addLayer(geojsonLayer);
     
@@ -188,7 +217,7 @@ function createMap(data, branch, planted) {
 
     });
 
-    var legend = L.control({position: 'topright'});
+    var legend = L.control({position: 'bottomright'});
 
     legend.onAdd = function (map) {
 

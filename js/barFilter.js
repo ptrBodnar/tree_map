@@ -64,8 +64,6 @@
     x.domain(x_domain);
     y.domain([0, d3.max(barChartData, function(d) { return d.value; })]);
 
-    debugger;
-
 // append the rectangles for the bar chart
     svg.selectAll(".bar")
         .data(barChartData)
@@ -98,8 +96,22 @@
 
     d3.select(".button").on("click", function () {
         returnColors();
-    })
+    });
+    
 
+    // Тут я працюю над тим, щоб координати змінювались разом із зумом
+    mymap.on('zoomend', function (event) {
+        var currZoom = mymap.getZoom();
+        console.log(currZoom);
+
+        geojsonLayer.eachLayer(function(layer){
+            var coords = layer.feature.properties["LatLon" + currZoom];
+            layer.setLatLng({
+                lat: +coords[1],
+                lng: +coords[0]
+            }).redraw();
+        });
+    });
 
     function returnColors() {
 
