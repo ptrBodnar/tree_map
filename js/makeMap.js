@@ -217,7 +217,7 @@ function createMap(data, branch, planted) {
 
     });
 
-    var legend = L.control({position: 'bottomright'});
+    var legend = L.control({position: 'topright'});
 
     legend.onAdd = function (map) {
 
@@ -229,7 +229,7 @@ function createMap(data, branch, planted) {
         // loop through our density intervals and generate a label with a colored square for each interval
         for (var i = 0; i < grades.length; i++) {
             div.innerHTML +=
-                '<i style="background:' + grades[i] + '"></i> ' + " " + labels[i] +'<br>';
+                '<span class="dot" style="background:' + grades[i] + '"></span> ' + " " + labels[i] +'<br>';
         }
 
         return div;
