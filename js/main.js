@@ -39,9 +39,6 @@ function getRandomArbitrary(min, max) {
         .defer(d3.csv, "data/tree_planted_2.csv")
         .await(function (err, data, branch, planted) {
             if (err) throw err;
-
-            console.log(data);
-
             createMap(data, branch, planted);
             createBar(data, branch, planted);
 

@@ -5,59 +5,35 @@
 function createMap(data, branch, planted) {
     d3.selectAll(".leaflet-interactive").remove();
     d3.selectAll(".leaflet-control-layers-toggle").remove();
-    
+
 
 
     function nested_geojson(data) {
 
-        result_list = [];
+        window.result_list = [];
 
         function makeObjectCopy(n, obj) {
-            var results = [];
             for (var i = 0; i < n; i++) {
                 result_list.push(obj);
             }
-            //return results;
         }
 
+
         data.forEach(function(d) {
-            if (+d.number <= 1) {
-                result_list.push(d)
-            }
-            else {
+            // if (+d.number <= 1) {
+            //     result_list.push(d)
+            // }
+            // else {
                 makeObjectCopy(+d.number, d);
-                // copied_list.forEach(function (copy) {
-                //     result_list.push(copy);
-                // })
-            }
+            // }
         });
 
-        result_list.forEach(function (obj) {
-
-            obj["LatLon13"] = [+obj.Longitude + (getRandomArbitrary(-0.005,0.005)),
-                +obj.Latitude + (getRandomArbitrary(-0.005,0.005))];
-
-            obj["LatLon14"] = [+obj.Longitude + (getRandomArbitrary(-0.004,0.004)),
-                                +obj.Latitude + (getRandomArbitrary(-0.004,0.004))];
-
-            obj["LatLon15"] = [+obj.Longitude + (getRandomArbitrary(-0.003,0.003)),
-                                +obj.Latitude + (getRandomArbitrary(-0.003,0.003))];
-
-            obj["LatLon16"] = [+obj.Longitude + (getRandomArbitrary(-0.002,0.002)),
-                                +obj.Latitude + (getRandomArbitrary(-0.002,0.002))];
-
-            obj["LatLon17"] = [+obj.Longitude + (getRandomArbitrary(-0.001,0.001)),
-                                +obj.Latitude + (getRandomArbitrary(-0.001,0.001))];
-
-            obj["LatLon18"] = [+obj.Longitude + (getRandomArbitrary(-0.0005,0.0005)),
-                                +obj.Latitude + (getRandomArbitrary(-0.0005,0.0005))];
-
-            obj.Longitude = +obj.Longitude + (getRandomArbitrary(-0.005,0.005));
-
-            obj.Latitude = +obj.Latitude + (getRandomArbitrary(-0.005,0.005));
-        });
-        
-
+        // result_list.forEach(function (obj) {
+        //     if (obj.number > 1) {
+        //         obj.Longitude = obj.Longitude + (getRandomArbitrary(-0.005,0.005));
+        //         obj.Latitude = obj.Latitude + (getRandomArbitrary(-0.005,0.005));
+        //     }
+        // });
 
         var geojson = result_list.map(function (d) {
             return {
@@ -70,12 +46,92 @@ function createMap(data, branch, planted) {
             }
         });
 
+
         return geojson
 
     }
 
+    var da = nested_geojson(data);
+    var br = nested_geojson(branch);
+    var pl = nested_geojson(planted);
 
-    geojsonLayer = L.geoJson(nested_geojson(data), {
+    da.forEach(function (obj) {
+            var coord = obj.geometry.coordinates;
+            coord[1] = coord[1] + (getRandomArbitrary(-0.005,0.005));
+            coord[0] = coord[0] + (getRandomArbitrary(-0.005,0.005));
+
+        obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
+
+        obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.002,0.002))];
+
+        obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0007,0.0007)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0007,0.0007))];
+
+        obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
+
+        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.001,0.001)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.00001,0.0001))];
+
+        obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
+
+    });
+
+
+    br.forEach(function (obj) {
+        var coord = obj.geometry.coordinates;
+        coord[1] = coord[1] + (getRandomArbitrary(-0.005,0.005));
+        coord[0] = coord[0] + (getRandomArbitrary(-0.005,0.005));
+
+        obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
+
+        obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.002,0.002))];
+
+        obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0007,0.0007)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0007,0.0007))];
+
+        obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
+
+        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.001,0.001)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.00001,0.0001))];
+
+        obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
+
+    });
+
+    pl.forEach(function (obj) {
+        var coord = obj.geometry.coordinates;
+        coord[1] = coord[1] + (getRandomArbitrary(-0.005,0.005));
+        coord[0] = coord[0] + (getRandomArbitrary(-0.005,0.005));
+
+        obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
+
+        obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.002,0.002))];
+
+        obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0007,0.0007)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0007,0.0007))];
+
+        obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
+
+        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.001,0.001)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.00001,0.0001))];
+
+        obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
+
+    });
+
+    geojsonLayer = L.geoJson(da, {
         style: function (feature) {
             return styleForLayer(feature)
         },
@@ -99,10 +155,8 @@ function createMap(data, branch, planted) {
         }
     });
 
-    console.log(geojsonLayer);
 
-   
-    geojsonLayerBranch = L.geoJson(nested_geojson(branch), {
+    geojsonLayerBranch = L.geoJson(br, {
         style: function (feature) {
             return styleForLayer(feature);
         },
@@ -122,9 +176,10 @@ function createMap(data, branch, planted) {
         }
     });
 
-    geojsonLayerPlanted = L.geoJson(nested_geojson(planted), {
+
+    geojsonLayerPlanted = L.geoJson(pl, {
         style: function (feature) {
-            return styleForLayer(feature);;
+            return styleForLayer(feature);
         },
         pointToLayer: function (feature, latlng) {
             // var sumNumber = 0;
@@ -144,6 +199,7 @@ function createMap(data, branch, planted) {
 
     
     mymap.addLayer(geojsonLayer);
+
     
 
     overlayMaps = {
@@ -154,53 +210,27 @@ function createMap(data, branch, planted) {
 
     L.control.layers(overlayMaps,null,{collapsed:false}).addTo(mymap);
 
-    geojsonLayer.on("click", function (event) {
-        var streets = [];
-        var actNumber = [];
 
-        d3.select("div.mystyle").style("display", "flex")
+    geojsonLayer.on("click", function (d) {
+
+        d3.select("div.mystyle").style("display", "flex");
         d3.selectAll(".mystyle *").remove();
 
-        var totalTree = d3.sum(event.layer.feature.properties.values, function (d) {
-            return +d.number
-        });
-        var totalCut = d3.sum(event.layer.feature.properties.values, function (d) {
-            return +d.was_cut
-        });
-        
-        d3.select(".mystyle").append("p").attr("class", "total").text("Загальна кількість дерев: "
-            + totalTree + " " + "Зрубано: " + totalCut);
+        d3.select(".mystyle").append("h3").text(
+            "Інформація про дерево: "
+        );
+
+        d3.select(".mystyle").append("p").attr("class", "total").text(
+            "Адреса: " + d.layer.feature.properties.tree_adress_shorten +
+            " " + d.layer.feature.properties.tree_characteristics);
 
         var element = d3.select(".mystyle")
             .selectAll(".element")
-            .data(event.layer.feature.properties.values)
+            .data(d.layer.feature.properties)
             .enter()
             .append("div")
             .attr("class", "element");
-
-
-        element.append("h4").text(function (d) {
-            if (!streets.includes(d.tree_adress_shorten)) {
-                streets.push(d.tree_adress_shorten)
-                return d.tree_adress_shorten
-            }
-        })
-
-
-        element.append("h5").text(function (d) {
-            if (!actNumber.includes(d.act_number)) {
-                actNumber.push(d.act_number)
-                return d.act_number
-            }
-        })
-
-        element.append("p").text(function (d) {
-            totalTree += +d.number;
-            totalCut += +d.was_cut;
-
-            return d.tree_characteristics + " Заплановано: " + d.number + " Вже зрубано: " + d.was_cut
-        })
-    })
+    });
 
 
     mymap.on('baselayerchange', function (e) {
@@ -217,10 +247,10 @@ function createMap(data, branch, planted) {
 
     });
 
-    var legend = L.control({position: 'topright'});
+    // add Treeline legend 1
+    var legend1 = L.control({position: 'topright'});
 
-    legend.onAdd = function (map) {
-
+    legend1.onAdd = function (mymap) {
 
         var div = L.DomUtil.create('div', 'info legend'),
             grades = ["#c90737", "#99bb06"],
@@ -235,7 +265,112 @@ function createMap(data, branch, planted) {
         return div;
     };
 
-    legend.addTo(mymap);
+    legend1.addTo(mymap);
+
+
+    // add  legend 2
+    var legend2 = L.control({position: 'topright'});
+    legend2.onAdd = function (mymap) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = ["#ac3f00", "#33981b"],
+            labels = ["Обрізали гілки","Ще не обрізали"];
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+                '<span class="dot" style="background:' + grades[i] + '"></span> ' + " " + labels[i] +'<br>';
+        }
+        return div;
+    };
+
+    // add  legend 3
+    var legend3 = L.control({position: 'topright'});
+    legend3.onAdd = function (mymap) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = ["#99bb06"],
+            labels = ["Висаджені дерева"];
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+                '<span class="dot" style="background:' + grades[i] + '"></span> ' + " " + labels[i] +'<br>';
+        }
+        return div;
+    };
+
+    mymap.on('baselayerchange', function (eventLayer) {
+        // Switch to the Permafrost legend...
+        if (eventLayer.name === 'Зрубування дерев') {
+            this.removeControl(legend2);
+            this.removeControl(legend3);
+            legend1.addTo(this);
+        }
+        if (eventLayer.name === 'Обрізання дерев') {
+            geojsonLayerBranch.setStyle(function (feature) {
+                if (feature.properties.was_cut == 'true') {
+                    return {fillColor: "#ac3f00", color: "rgba(0, 0, 0, 0);"};
+                }
+                else {
+                    return {fillColor: "#33981b", color: "rgba(0, 0, 0, 0);"} ;
+                }
+            });
+            this.removeControl(legend1);
+            this.removeControl(legend3);
+            legend2.addTo(this);
+        }
+        if (eventLayer.name === 'Висадження нових дерев') {
+            this.removeControl(legend1);
+            this.removeControl(legend2);
+            legend3.addTo(this);
+        }
+    });
+
+
+    // Тут я працюю над тим, щоб координати змінювались разом із зумом
+    mymap.on('zoomend', function () {
+        var currZoom = mymap.getZoom();
+
+        geojsonLayer.eachLayer(function(layer){
+            var coords = layer.feature.properties["LatLon" + currZoom];
+            layer.setLatLng({
+                lat: +coords[1],
+                lng: +coords[0]
+            }).redraw();
+        });
+
+        geojsonLayerBranch.eachLayer(function(layer){
+            var currZoom = mymap.getZoom();
+            var arbitr = {
+                "13": [-0.005,0.005],
+                "14": [-0.002,0.002],
+                "15": [-0.0007,0.0007],
+                "16": [-0.0004,0.0004],
+                "17": [-0.0002,0.0002],
+                "18": [-0.000001,0.000001]
+            };
+            var coords = layer.feature.geometry.coordinates;
+            layer.setLatLng({
+                lat: +coords[1] + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
+                lng: +coords[0] + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1]))
+            }).redraw();
+        });
+
+
+        geojsonLayerPlanted.eachLayer(function(layer){
+            var currZoom = mymap.getZoom();
+            var arbitr = {
+                "13": [-0.005,0.005],
+                "14": [-0.002,0.002],
+                "15": [-0.0007,0.0007],
+                "16": [-0.0004,0.0004],
+                "17": [-0.0002,0.0002],
+                "18": [-0.000001,0.000001]
+            };
+            var coords = layer.feature.geometry.coordinates;
+            layer.setLatLng({
+                lat: +coords[1] + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
+                lng: +coords[0] + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1]))
+            }).redraw();
+        });
+    });
 
 
 }

@@ -19,6 +19,8 @@
     barChartData.forEach(function (d) {
         d.key = swapMonthAndYear(d.key);
     });
+
+    console.log(barChartData);
     
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -81,15 +83,15 @@
         .on("click", function (d) {
             returnColors();
             geojsonLayer.setStyle(function(feature){
-                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.split(".")[1]))
+                if (!(feature.properties.date_UTF.split(".")[1] === d.key.split(".")[1]))
                     return {fillColor: 'rgba(0,0,0,0)'}
             });
             geojsonLayerBranch.setStyle(function(feature){
-                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.split(".")[1]))
+                if (!(feature.properties.date_UTF.split(".")[1] === d.key.split(".")[1]))
                     return {fillColor: 'rgba(0,0,0,0)'}
             });
             geojsonLayerPlanted.setStyle(function(feature){
-                if (!(feature.properties.values[0].date_UTF.split(".")[1] === d.key.split(".")[1]))
+                if (!(feature.properties.date_UTF.split(".")[1] === d.key.split(".")[1]))
                     return {fillColor: 'rgba(0,0,0,0)'}
             });
         });
@@ -99,28 +101,22 @@
     });
     
 
-    // Тут я працюю над тим, щоб координати змінювались разом із зумом
-    mymap.on('zoomend', function (event) {
-        var currZoom = mymap.getZoom();
-        console.log(currZoom);
-
-        geojsonLayer.eachLayer(function(layer){
-            var coords = layer.feature.properties["LatLon" + currZoom];
-            layer.setLatLng({
-                lat: +coords[1],
-                lng: +coords[0]
-            }).redraw();
-        });
-    });
+    
 
     function returnColors() {
 
         geojsonLayer.setStyle(function(feature){
             return styleForLayer(feature);
         });
-        geojsonLayerBranch.setStyle(function(feature){
-            return styleForLayer(feature);
+        geojsonLayerBranch.setStyle(function (feature) {
+            if (feature.properties.was_cut == 'TRUE') {
+                return {fillColor: "#ac3f00", color: "rgba(0, 0, 0, 0);"};
+            }
+            else {
+                return {fillColor: "#33981b", color: "rgba(0, 0, 0, 0);"} ;
+            }
         });
+
         geojsonLayerPlanted.setStyle(function(feature){
             return styleForLayer(feature);
         });

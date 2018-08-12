@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acc62718-f987-4600-a522-f3a274638e64" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Untitled.ipynb" afterPath="$PROJECT_DIR$/data/Untitled.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/branch_2.csv" afterPath="$PROJECT_DIR$/data/branch_2.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/cleaned_tree_2.csv" afterPath="$PROJECT_DIR$/data/cleaned_tree_2.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/tree_planted_2.csv" afterPath="$PROJECT_DIR$/data/tree_planted_2.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/barFilter.js" afterPath="$PROJECT_DIR$/js/barFilter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/interactivity.js" afterPath="$PROJECT_DIR$/js/interactivity.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/makeMap.js" afterPath="$PROJECT_DIR$/js/makeMap.js" />
     </list>
     <ignored path="mapKropyvnytskyi.iws" />
@@ -28,8 +34,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="89" column="61" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
+            <state relative-caret-position="-1942">
+              <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="18" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -38,8 +44,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -48,12 +54,14 @@
       <file leaf-file-name="makeMap.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/makeMap.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="231" column="33" selection-start-line="231" selection-start-column="33" selection-end-line="231" selection-end-column="33" />
+            <state relative-caret-position="549">
+              <caret line="369" column="106" selection-start-line="369" selection-start-column="106" selection-end-line="369" selection-end-column="106" />
               <folding>
                 <element signature="n#!!doc;n#createMap#0" expanded="false" />
-                <marker date="1533994163825" expanded="true" signature="3296:3377" placeholder="..." />
-                <marker date="1533994163825" expanded="true" signature="7178:7189" placeholder="..." />
+                <marker date="1534116958545" expanded="true" signature="6159:6240" placeholder="..." />
+                <marker date="1534116958545" expanded="true" signature="9203:9214" placeholder="..." />
+                <marker date="1534116958545" expanded="true" signature="9839:9850" placeholder="..." />
+                <marker date="1534116958545" expanded="true" signature="10420:10431" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -62,8 +70,8 @@
       <file leaf-file-name="interactivity.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/interactivity.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="35" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="35" />
+            <state relative-caret-position="198">
+              <caret line="11" column="76" selection-start-line="11" selection-start-column="76" selection-end-line="11" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -72,21 +80,11 @@
       <file leaf-file-name="barFilter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/barFilter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1890">
-              <caret line="107" column="71" selection-start-line="107" selection-start-column="71" selection-end-line="107" selection-end-column="71" />
+            <state relative-caret-position="562">
+              <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc;n#createBar#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tree_planted_2.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/tree_planted_2.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="26" selection-end-column="18" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -111,12 +109,13 @@
         <option value="$PROJECT_DIR$/data/tree_planted.csv" />
         <option value="$PROJECT_DIR$/gitignore" />
         <option value="$PROJECT_DIR$/data/branch_2.csv" />
-        <option value="$PROJECT_DIR$/js/interactivity.js" />
         <option value="$PROJECT_DIR$/data/tree_planted_2.csv" />
-        <option value="$PROJECT_DIR$/js/barFilter.js" />
-        <option value="$PROJECT_DIR$/js/main.js" />
-        <option value="$PROJECT_DIR$/js/makeMap.js" />
+        <option value="$PROJECT_DIR$/data/cleaned_tree_2_2.csv" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/js/barFilter.js" />
+        <option value="$PROJECT_DIR$/js/interactivity.js" />
+        <option value="$PROJECT_DIR$/js/makeMap.js" />
       </list>
     </option>
   </component>
@@ -204,8 +203,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,7 +296,9 @@
       <workItem from="1533715907418" duration="18423000" />
       <workItem from="1533803542662" duration="15969000" />
       <workItem from="1533893016776" duration="21676000" />
-      <workItem from="1533985047186" duration="5425000" />
+      <workItem from="1533985047186" duration="13964000" />
+      <workItem from="1534081696776" duration="13811000" />
+      <workItem from="1534102300077" duration="13840000" />
     </task>
     <task id="LOCAL-00001" summary="Карта з трьома шарами">
       <created>1532604646255</created>
@@ -345,7 +346,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185632000" />
+    <option name="totallyTimeSpent" value="221822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
@@ -355,19 +356,19 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -400,22 +401,16 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/makeMap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
           <caret line="50" column="32" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="32" />
           <folding>
             <element signature="n#!!doc;n#createMap#0" expanded="false" />
-            <marker date="1533994163825" expanded="true" signature="3296:3377" placeholder="..." />
-            <marker date="1533994163825" expanded="true" signature="7178:7189" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="6159:6240" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9203:9214" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9839:9850" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="10420:10431" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -475,8 +470,10 @@
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="46" selection-end-column="8" />
           <folding>
             <element signature="n#!!doc;n#createMap#0" expanded="false" />
-            <marker date="1533994163825" expanded="true" signature="3296:3377" placeholder="..." />
-            <marker date="1533994163825" expanded="true" signature="7178:7189" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="6159:6240" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9203:9214" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9839:9850" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="10420:10431" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -528,8 +525,10 @@
           <caret line="109" column="77" selection-start-line="109" selection-start-column="77" selection-end-line="109" selection-end-column="77" />
           <folding>
             <element signature="n#!!doc;n#createMap#0" expanded="false" />
-            <marker date="1533994163825" expanded="true" signature="3296:3377" placeholder="..." />
-            <marker date="1533994163825" expanded="true" signature="7178:7189" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="6159:6240" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9203:9214" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9839:9850" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="10420:10431" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -563,8 +562,10 @@
           <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc;n#createMap#0" expanded="false" />
-            <marker date="1533994163825" expanded="true" signature="3296:3377" placeholder="..." />
-            <marker date="1533994163825" expanded="true" signature="7178:7189" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="6159:6240" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9203:9214" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9839:9850" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="10420:10431" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -592,8 +593,10 @@
           <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc;n#createMap#0" expanded="false" />
-            <marker date="1533994163825" expanded="true" signature="3296:3377" placeholder="..." />
-            <marker date="1533994163825" expanded="true" signature="7178:7189" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="6159:6240" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9203:9214" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9839:9850" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="10420:10431" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -638,8 +641,10 @@
           <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
           <folding>
             <element signature="n#!!doc;n#createMap#0" expanded="false" />
-            <marker date="1533994163825" expanded="true" signature="3296:3377" placeholder="..." />
-            <marker date="1533994163825" expanded="true" signature="7178:7189" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="6159:6240" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9203:9214" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9839:9850" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="10420:10431" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -720,10 +725,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/branch_2.csv">
+    <entry file="file://$PROJECT_DIR$/data/.~lock.branch_2.csv#" />
+    <entry file="file://$PROJECT_DIR$/data/.~lock.cleaned_tree_2.csv#" />
+    <entry file="file://$PROJECT_DIR$/data/tree_planted_2.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="150" selection-start-line="14" selection-start-column="150" selection-end-line="14" selection-end-column="150" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/cleaned_tree_2_2.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/barFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#createBar#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/branch_2.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="156" selection-start-line="26" selection-start-column="156" selection-end-line="26" selection-end-column="156" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -731,68 +764,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="28" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/.~lock.branch_2.csv#" />
-    <entry file="file://$PROJECT_DIR$/data/.~lock.cleaned_tree_2.csv#" />
-    <entry file="file://$PROJECT_DIR$/data/cleaned_tree_2.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="75" column="6" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/interactivity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="35" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/barFilter.js">
+    <entry file="file://$PROJECT_DIR$/data/cleaned_tree_2.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="107" column="71" selection-start-line="107" selection-start-column="71" selection-end-line="107" selection-end-column="71" />
-          <folding>
-            <element signature="n#!!doc;n#createBar#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/tree_planted_2.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="26" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="154" selection-start-line="0" selection-start-column="154" selection-end-line="0" selection-end-column="154" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="89" column="61" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
+        <state relative-caret-position="-1942">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="18" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="391">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/interactivity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="76" selection-start-line="11" selection-start-column="76" selection-end-line="11" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/makeMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="231" column="33" selection-start-line="231" selection-start-column="33" selection-end-line="231" selection-end-column="33" />
+        <state relative-caret-position="549">
+          <caret line="369" column="106" selection-start-line="369" selection-start-column="106" selection-end-line="369" selection-end-column="106" />
           <folding>
             <element signature="n#!!doc;n#createMap#0" expanded="false" />
-            <marker date="1533994163825" expanded="true" signature="3296:3377" placeholder="..." />
-            <marker date="1533994163825" expanded="true" signature="7178:7189" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="6159:6240" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9203:9214" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="9839:9850" placeholder="..." />
+            <marker date="1534116958545" expanded="true" signature="10420:10431" placeholder="..." />
           </folding>
         </state>
       </provider>
