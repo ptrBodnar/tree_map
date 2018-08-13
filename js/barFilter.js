@@ -109,11 +109,11 @@
             return styleForLayer(feature);
         });
         geojsonLayerBranch.setStyle(function (feature) {
-            if (feature.properties.was_cut == 'TRUE') {
-                return {fillColor: "#ac3f00", color: "rgba(0, 0, 0, 0);"};
+            if (feature.properties.was_cut == 'true') {
+                return {fillColor: "#ac3f00", color: "rgba(0, 0, 0, 0);"}; 
             }
             else {
-                return {fillColor: "#33981b", color: "rgba(0, 0, 0, 0);"} ;
+                return {fillColor: "#33981b",  color: "rgba(0, 0, 0, 0);"} ;
             }
         });
 
