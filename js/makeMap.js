@@ -284,7 +284,7 @@ function createMap(data, branch, planted) {
             d3.select("#title").append("h1")
                 .text(e.name);
 
-            d3.select("div.mystyle").style("display", "flex");
+            d3.select("div.mystyle").style("display", "none");
             d3.selectAll(".mystyle *").remove();
             createBar(data);
         }
@@ -292,7 +292,7 @@ function createMap(data, branch, planted) {
             d3.select("#title").append("h1")
                 .text(e.name);
 
-            d3.select("div.mystyle").style("display", "flex");
+            d3.select("div.mystyle").style("display", "none");
             d3.selectAll(".mystyle *").remove();
             createBar(branch);
         }
@@ -300,7 +300,7 @@ function createMap(data, branch, planted) {
             d3.select("#title").append("h1")
                 .text(e.name);
 
-            d3.select("div.mystyle").style("display", "flex");
+            d3.select("div.mystyle").style("display", "none");
             d3.selectAll(".mystyle *").remove();
             createBar(planted);
         }
