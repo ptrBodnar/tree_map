@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="acc62718-f987-4600-a522-f3a274638e64" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/interactivity.js" afterPath="$PROJECT_DIR$/js/interactivity.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/makeMap.js" afterPath="$PROJECT_DIR$/js/makeMap.js" />
     </list>
     <ignored path="mapKropyvnytskyi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+            <state relative-caret-position="450">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -293,7 +291,7 @@
       <workItem from="1533985047186" duration="13964000" />
       <workItem from="1534081696776" duration="13811000" />
       <workItem from="1534102300077" duration="15206000" />
-      <workItem from="1534148348506" duration="1767000" />
+      <workItem from="1534148348506" duration="1949000" />
     </task>
     <task id="LOCAL-00001" summary="Карта з трьома шарами">
       <created>1532604646255</created>
@@ -341,7 +339,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224955000" />
+    <option name="totallyTimeSpent" value="225137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
@@ -798,8 +796,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        <state relative-caret-position="450">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
