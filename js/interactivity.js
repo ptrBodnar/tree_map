@@ -11,7 +11,10 @@ function addPopUp(e) {
         d3.select(".mystyle").append("p").attr("class", "total").text(
             "Адреса: " + d.layer.feature.properties.tree_adress_shorten);
 
-        d3.select(".mystyle").append("p").attr("id", d.layer.feature.properties.tree_characteristics)
+        d3.select(".mystyle")
+            .append("p")
+            .attr("class", "tree")
+            .attr("id", d.layer.feature.properties.tree_characteristics)
             .text("Вид дерева: " + d.layer.feature.properties.tree_characteristics)
             .on('mouseover', function (d) {
                 var sel = this.id;

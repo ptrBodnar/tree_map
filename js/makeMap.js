@@ -228,7 +228,9 @@ function createMap(data, branch, planted) {
         d3.select(".mystyle").append("p").attr("class", "total").text(
             "Адреса: " + d.layer.feature.properties.tree_adress_shorten);
 
-        d3.select(".mystyle").append("p").attr("id", d.layer.feature.properties.tree_characteristics)
+        d3.select(".mystyle").append("p")
+            .attr("id", d.layer.feature.properties.tree_characteristics)
+            .attr("class", "tree")
             .text("Вид дерева: " + d.layer.feature.properties.tree_characteristics)
             .on('mouseover', function () {
                 var sel = this.id;
