@@ -1,7 +1,7 @@
 function addPopUp(e) {
 
     e.layer.on("click", function (d) {
-        d3.select("div.mystyle").style("display", "flex")
+        d3.select("div.mystyle").style("display", "flex");
         d3.selectAll(".mystyle *").remove();
 
         d3.select(".mystyle").append("h3").text(

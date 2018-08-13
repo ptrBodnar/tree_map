@@ -119,7 +119,12 @@
         });
 
         geojsonLayerPlanted.setStyle(function(feature){
-            return styleForLayer(feature);
+            if (feature.properties.was_cut == 'true') {
+                return {fillColor: "#99bb06", color: "rgba(0, 0, 0, 0);"};
+            }
+            else {
+                return {fillColor: "#99bb06",  color: "rgba(0, 0, 0, 0);"} ;
+            }
         });
     }
 
