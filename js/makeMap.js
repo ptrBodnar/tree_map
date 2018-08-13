@@ -344,12 +344,11 @@ function createMap(data, branch, planted) {
                 "15": [-0.0007,0.0007],
                 "16": [-0.0004,0.0004],
                 "17": [-0.0002,0.0002],
-                "18": [-0.000001,0.000001]
+                "18": [-0.0001,0.0001]
             };
-            var coords = layer.feature.geometry.coordinates;
             layer.setLatLng({
-                lat: +coords[1] + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
-                lng: +coords[0] + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1]))
+                lat: +layer.feature.properties.Latitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
+                lng: +layer.feature.properties.Longitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1]))
             }).redraw();
         });
 
@@ -362,12 +361,11 @@ function createMap(data, branch, planted) {
                 "15": [-0.0007,0.0007],
                 "16": [-0.0004,0.0004],
                 "17": [-0.0002,0.0002],
-                "18": [-0.000001,0.000001]
+                "18": [-0.0001,0.0001]
             };
-            var coords = layer.feature.geometry.coordinates;
             layer.setLatLng({
-                lat: +coords[1] + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
-                lng: +coords[0] + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1]))
+                lat: +layer.feature.properties.Latitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
+                lng: +layer.feature.properties.Longitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1]))
             }).redraw();
         });
     });
