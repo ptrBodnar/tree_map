@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acc62718-f987-4600-a522-f3a274638e64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/barFilter.js" afterPath="$PROJECT_DIR$/js/barFilter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="mapKropyvnytskyi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="402">
-              <caret line="137" column="12" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="51" />
+              <caret line="137" column="12" selection-start-line="137" selection-start-column="12" selection-end-line="137" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -77,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="barFilter.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="barFilter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/barFilter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+            <state relative-caret-position="135">
+              <caret line="66" column="66" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="66" />
               <folding>
                 <element signature="n#!!doc;n#createBar#0" expanded="false" />
               </folding>
@@ -113,9 +114,9 @@
         <option value="$PROJECT_DIR$/data/cleaned_tree_2_2.csv" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/makeMap.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/interactivity.js" />
         <option value="$PROJECT_DIR$/js/barFilter.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -299,7 +300,7 @@
       <workItem from="1533985047186" duration="13964000" />
       <workItem from="1534081696776" duration="13811000" />
       <workItem from="1534102300077" duration="15206000" />
-      <workItem from="1534148348506" duration="17552000" />
+      <workItem from="1534148348506" duration="18293000" />
     </task>
     <task id="LOCAL-00001" summary="Карта з трьома шарами">
       <created>1532604646255</created>
@@ -347,7 +348,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240740000" />
+    <option name="totallyTimeSpent" value="241481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
@@ -751,14 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="137" column="12" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/interactivity.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -789,11 +782,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/barFilter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+        <state relative-caret-position="135">
+          <caret line="66" column="66" selection-start-line="66" selection-start-column="66" selection-end-line="66" selection-end-column="66" />
           <folding>
             <element signature="n#!!doc;n#createBar#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="137" column="12" selection-start-line="137" selection-start-column="12" selection-end-line="137" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
