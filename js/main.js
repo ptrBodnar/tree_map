@@ -31,7 +31,7 @@ function styleForLayer(feature) {
         return {fillColor: "#c90737", color: "rgba(0, 0, 0, 0);", fillOpacity: "0.75"};
     }
     else {
-        return {fillColor: "#99bb06", color: "rgba(0, 0, 0, 0);", fillOpacity: "0.75"};
+        return {fillColor: "#c95107", color: "rgba(0, 0, 0, 0);", fillOpacity: "0.75"};
     }
 }
 

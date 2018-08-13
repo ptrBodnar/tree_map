@@ -57,26 +57,26 @@ function createMap(data, branch, planted) {
 
     da.forEach(function (obj) {
             var coord = obj.geometry.coordinates;
-            coord[1] = coord[1] + (getRandomArbitrary(-0.005,0.005));
-            coord[0] = coord[0] + (getRandomArbitrary(-0.005,0.005));
+            coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
+            coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
 
-        obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
+        obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.004,0.004)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.004,0.004))];
 
-        obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.002,0.002))];
+        obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0035,0.0035)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0035,0.0035))];
 
-        obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0007,0.0007)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0007,0.0007))];
+        obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.003,0.003)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.003,0.0003))];
 
-        obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
+        obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0025,0.0025)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0025,0.0025))];
 
-        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.001,0.001)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.00001,0.0001))];
+        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0018,0.002))];
 
-        obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
+        obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0015,0.0015)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.009,0.009))];
 
     });
 
@@ -84,8 +84,8 @@ function createMap(data, branch, planted) {
 
     br.forEach(function (obj) {
         var coord = obj.geometry.coordinates;
-        coord[1] = coord[1] + (getRandomArbitrary(-0.005,0.005));
-        coord[0] = coord[0] + (getRandomArbitrary(-0.005,0.005));
+        coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
+        coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
 
         obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
             +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
@@ -99,8 +99,8 @@ function createMap(data, branch, planted) {
         obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
             +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
 
-        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.001,0.001)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.00001,0.0001))];
+        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
 
         obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
             +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
@@ -109,8 +109,8 @@ function createMap(data, branch, planted) {
 
     pl.forEach(function (obj) {
         var coord = obj.geometry.coordinates;
-        coord[1] = coord[1] + (getRandomArbitrary(-0.005,0.005));
-        coord[0] = coord[0] + (getRandomArbitrary(-0.005,0.005));
+        coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
+        coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
 
         obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
             +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
@@ -124,8 +124,8 @@ function createMap(data, branch, planted) {
         obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
             +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
 
-        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.001,0.001)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.00001,0.0001))];
+        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
+            +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
 
         obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
             +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
@@ -211,6 +211,9 @@ function createMap(data, branch, planted) {
 
     L.control.layers(overlayMaps,null,{collapsed:false}).addTo(mymap);
 
+    d3.select("#title").append("h1")
+        .text("Зрубування дерев");
+
 
     geojsonLayer.on("click", function (d) {
 
@@ -221,14 +224,15 @@ function createMap(data, branch, planted) {
             "Інформація про дерево: "
         );
 
+
         d3.select(".mystyle").append("p").attr("class", "total").text(
             "Адреса: " + d.layer.feature.properties.tree_adress_shorten);
 
-        d3.select(".mystyle").append("p").attr("class", d.layer.feature.properties.tree_characteristics)
-            .attr("class", "tree")
+        d3.select(".mystyle").append("p").attr("id", d.layer.feature.properties.tree_characteristics)
             .text("Вид дерева: " + d.layer.feature.properties.tree_characteristics)
             .on('mouseover', function () {
-                var sel = this.className;
+                var sel = this.id;
+                debugger;
                 geojsonLayer.setStyle(function (d) {
                     if (!(d.properties.tree_characteristics == sel)) {
                         return {fillOpacity: "0.1"};
@@ -246,7 +250,7 @@ function createMap(data, branch, planted) {
                 })
             })
             .on('mouseout', function () {
-                var sel = this.className;
+                var sel = this.id;
                 geojsonLayer.setStyle(function (d) {
                     if (!(d.properties.tree_characteristics == sel)) {
                         return {fillOpacity: "0.75"};
@@ -254,12 +258,12 @@ function createMap(data, branch, planted) {
                 })
                 geojsonLayerBranch.setStyle(function (d) {
                     if (!(d.properties.tree_characteristics == sel)) {
-                        return {fillOpacity: "0.1"};
+                        return {fillOpacity: "0.75"};
                     }
                 })
                 geojsonLayerPlanted.setStyle(function (d) {
                     if (!(d.properties.tree_characteristics == sel)) {
-                        return {fillOpacity: "0.1"};
+                        return {fillOpacity: "0.75"};
                     }
                 })
             });
@@ -275,17 +279,27 @@ function createMap(data, branch, planted) {
 
     mymap.on('baselayerchange', function (e) {
         addPopUp(e);
+        d3.selectAll("#title *").remove();
         if (e.name == 'Зрубування дерев') {
+            d3.select("#title").append("h1")
+                .text(e.name);
+
             d3.select("div.mystyle").style("display", "flex");
             d3.selectAll(".mystyle *").remove();
             createBar(data);
         }
         if (e.name == 'Обрізання дерев') {
+            d3.select("#title").append("h1")
+                .text(e.name);
+
             d3.select("div.mystyle").style("display", "flex");
             d3.selectAll(".mystyle *").remove();
             createBar(branch);
         }
         if (e.name == 'Висадження нових дерев') {
+            d3.select("#title").append("h1")
+                .text(e.name);
+
             d3.select("div.mystyle").style("display", "flex");
             d3.selectAll(".mystyle *").remove();
             createBar(planted);
@@ -300,7 +314,7 @@ function createMap(data, branch, planted) {
     legend1.onAdd = function (mymap) {
 
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = ["#c90737", "#99bb06"],
+            grades = ["#c90737", "#c95107"],
             labels = ["Зрубані дерева","Дерева які ще зрубають"];
 
         // loop through our density intervals and generate a label with a colored square for each interval
@@ -319,7 +333,7 @@ function createMap(data, branch, planted) {
     var legend2 = L.control({position: 'topright'});
     legend2.onAdd = function (mymap) {
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = ["#ac3f00", "#33981b"],
+            grades = ["#ac3f00", "#ac9500"],
             labels = ["Обрізали гілки","Ще не обрізали"];
         // loop through our density intervals and generate a label with a colored square for each interval
         for (var i = 0; i < grades.length; i++) {
@@ -356,7 +370,7 @@ function createMap(data, branch, planted) {
                     return {fillColor: "#ac3f00", color: "rgba(0, 0, 0, 0);"};
                 }
                 else {
-                    return {fillColor: "#33981b", color: "rgba(0, 0, 0, 0);"} ;
+                    return {fillColor: "#ac9500", color: "rgba(0, 0, 0, 0);"} ;
                 }
             });
             this.removeControl(legend1);
@@ -364,6 +378,14 @@ function createMap(data, branch, planted) {
             legend2.addTo(this);
         }
         if (eventLayer.name === 'Висадження нових дерев') {
+            geojsonLayerPlanted.setStyle(function (feature) {
+                if (feature.properties.was_cut == 'true') {
+                    return {fillColor: "#99bb06", color: "rgba(0, 0, 0, 0);"};
+                }
+                else {
+                    return {fillColor: "#99bb06", color: "rgba(0, 0, 0, 0);"} ;
+                }
+            });
             this.removeControl(legend1);
             this.removeControl(legend2);
             legend3.addTo(this);
@@ -373,25 +395,33 @@ function createMap(data, branch, planted) {
 
     // Тут я працюю над тим, щоб координати змінювались разом із зумом
     mymap.on('zoomend', function () {
-        var currZoom = mymap.getZoom();
+        //var currZoom = mymap.getZoom();
 
         geojsonLayer.eachLayer(function(layer){
-            var coords = layer.feature.properties["LatLon" + currZoom];
+            var currZoom = mymap.getZoom();
+            var arbitr = {
+                "13": [-0.003,0.003],
+                "14": [-0.0025,0.0025],
+                "15": [-0.002,0.002],
+                "16": [-0.0015,0.0015],
+                "17": [-0.001,0.001],
+                "18": [-0.0007,0.0007]
+            };
             layer.setLatLng({
-                lat: +coords[1],
-                lng: +coords[0]
+                lat: +layer.feature.properties.Latitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
+                lng: +layer.feature.properties.Longitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1]))
             }).redraw();
         });
 
         geojsonLayerBranch.eachLayer(function(layer){
             var currZoom = mymap.getZoom();
             var arbitr = {
-                "13": [-0.005,0.005],
-                "14": [-0.002,0.002],
-                "15": [-0.0007,0.0007],
-                "16": [-0.0004,0.0004],
-                "17": [-0.0002,0.0002],
-                "18": [-0.0001,0.0001]
+                "13": [-0.003,0.003],
+                "14": [-0.0025,0.0025],
+                "15": [-0.002,0.002],
+                "16": [-0.0015,0.0015],
+                "17": [-0.001,0.001],
+                "18": [-0.0009,0.0009]
             };
             layer.setLatLng({
                 lat: +layer.feature.properties.Latitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
@@ -403,12 +433,12 @@ function createMap(data, branch, planted) {
         geojsonLayerPlanted.eachLayer(function(layer){
             var currZoom = mymap.getZoom();
             var arbitr = {
-                "13": [-0.005,0.005],
-                "14": [-0.002,0.002],
-                "15": [-0.0007,0.0007],
-                "16": [-0.0004,0.0004],
-                "17": [-0.0002,0.0002],
-                "18": [-0.0001,0.0001]
+                "13": [-0.003,0.003],
+                "14": [-0.0025,0.0025],
+                "15": [-0.002,0.002],
+                "16": [-0.0015,0.0015],
+                "17": [-0.001,0.001],
+                "18": [-0.0009,0.0009]
             };
             layer.setLatLng({
                 lat: +layer.feature.properties.Latitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),

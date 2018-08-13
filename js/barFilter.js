@@ -24,7 +24,7 @@
     
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
-        width = 460 - margin.left - margin.right,
+        width = 400 - margin.left - margin.right,
         height = 150 - margin.top - margin.bottom;
 
 // set the ranges
@@ -78,7 +78,7 @@
         .attr("width", x.bandwidth())
         .attr("y", function(d) { return y(d.value); })
         .attr("height", function(d) { return height - y(d.value); })
-        .attr("fill", "white")
+        .attr("fill", "#b5b1af")
         .attr("position", "centered")
         .on("click", function (d) {
             returnColors();
@@ -96,7 +96,8 @@
             });
         });
 
-    d3.select(".button").on("click", function () {
+    d3.select(".button")
+        .on("click", function () {
         returnColors();
     });
     
@@ -110,10 +111,10 @@
         });
         geojsonLayerBranch.setStyle(function (feature) {
             if (feature.properties.was_cut == 'true') {
-                return {fillColor: "#ac3f00", color: "rgba(0, 0, 0, 0);"}; 
+                return {fillColor: "#ac3f00", color: "rgba(0, 0, 0, 0);"};
             }
             else {
-                return {fillColor: "#33981b",  color: "rgba(0, 0, 0, 0);"} ;
+                return {fillColor: "#ac9500",  color: "rgba(0, 0, 0, 0);"} ;
             }
         });
 
