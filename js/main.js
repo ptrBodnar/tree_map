@@ -28,10 +28,10 @@ function styleForLayer(feature) {
     //     totalTrees += +d.number;
     // })
     if (feature.properties.was_cut == 'True') {
-        return {fillColor: "#c90737", color: "rgba(0, 0, 0, 0);"};
+        return {fillColor: "#c90737", color: "rgba(0, 0, 0, 0);", fillOpacity: "0.75"};
     }
     else {
-        return {fillColor: "#99bb06", color: "rgba(0, 0, 0, 0);"} ;
+        return {fillColor: "#99bb06", color: "rgba(0, 0, 0, 0);", fillOpacity: "0.75"};
     }
 }
 

@@ -11,8 +11,44 @@ function addPopUp(e) {
         d3.select(".mystyle").append("p").attr("class", "total").text(
             "Адреса: " + d.layer.feature.properties.tree_adress_shorten);
 
-        d3.select(".mystyle").append("p").attr("class", "total").text(
-            "Вид дерева: " + d.layer.feature.properties.tree_characteristics);
+        d3.select(".mystyle").append("p").attr("class", d.layer.feature.properties.tree_characteristics)
+            .text("Вид дерева: " + d.layer.feature.properties.tree_characteristics)
+            .on('mouseover', function () {
+                var sel = this.className;
+                geojsonLayer.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.1"};
+                    }
+                });
+                geojsonLayerBranch.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.1"};
+                    }
+                });
+                geojsonLayerPlanted.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.1"};
+                    }
+                })
+            })
+            .on('mouseout', function () {
+                var sel = this.className;
+                geojsonLayer.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.75"};
+                    }
+                });
+                geojsonLayerBranch.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.75"};
+                    }
+                });
+                geojsonLayerPlanted.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.75"};
+                    }
+                })
+            });
 
             // var element = d3.select(".mystyle")
             //     .selectAll(".element")

@@ -81,6 +81,7 @@ function createMap(data, branch, planted) {
     });
 
 
+
     br.forEach(function (obj) {
         var coord = obj.geometry.coordinates;
         coord[1] = coord[1] + (getRandomArbitrary(-0.005,0.005));
@@ -172,7 +173,7 @@ function createMap(data, branch, planted) {
             // if (sumNumber > 15) {
             //     sumNumber = 15;
             // }
-            return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.75});
+            return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.5});
         }
     });
 
@@ -193,7 +194,7 @@ function createMap(data, branch, planted) {
             // if (sumNumber > 15) {
             //     sumNumber = 15;
             // }
-            return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.75});
+            return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.5});
         }
     });
 
@@ -223,8 +224,45 @@ function createMap(data, branch, planted) {
         d3.select(".mystyle").append("p").attr("class", "total").text(
             "Адреса: " + d.layer.feature.properties.tree_adress_shorten);
 
-        d3.select(".mystyle").append("p").attr("class", "total").text(
-            "Вид дерева: " + d.layer.feature.properties.tree_characteristics);
+        d3.select(".mystyle").append("p").attr("class", d.layer.feature.properties.tree_characteristics)
+            .attr("class", "tree")
+            .text("Вид дерева: " + d.layer.feature.properties.tree_characteristics)
+            .on('mouseover', function () {
+                var sel = this.className;
+                geojsonLayer.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.1"};
+                    }
+                })
+                geojsonLayerBranch.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.1"};
+                    }
+                })
+                geojsonLayerPlanted.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.1"};
+                    }
+                })
+            })
+            .on('mouseout', function () {
+                var sel = this.className;
+                geojsonLayer.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.75"};
+                    }
+                })
+                geojsonLayerBranch.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.1"};
+                    }
+                })
+                geojsonLayerPlanted.setStyle(function (d) {
+                    if (!(d.properties.tree_characteristics == sel)) {
+                        return {fillOpacity: "0.1"};
+                    }
+                })
+            });
 
         var element = d3.select(".mystyle")
             .selectAll(".element")
@@ -238,16 +276,23 @@ function createMap(data, branch, planted) {
     mymap.on('baselayerchange', function (e) {
         addPopUp(e);
         if (e.name == 'Зрубування дерев') {
+            d3.select("div.mystyle").style("display", "flex");
+            d3.selectAll(".mystyle *").remove();
             createBar(data);
         }
         if (e.name == 'Обрізання дерев') {
+            d3.select("div.mystyle").style("display", "flex");
+            d3.selectAll(".mystyle *").remove();
             createBar(branch);
         }
         if (e.name == 'Висадження нових дерев') {
+            d3.select("div.mystyle").style("display", "flex");
+            d3.selectAll(".mystyle *").remove();
             createBar(planted);
         }
 
     });
+
 
     // add Treeline legend 1
     var legend1 = L.control({position: 'topright'});
