@@ -14,7 +14,7 @@ function createMap(data, branch, planted) {
 
         function makeObjectCopy(n, obj) {
             for (var i = 0; i < n; i++) {
-                result_list.push(obj);
+                result_list.push(JSON.parse(JSON.stringify(obj)));
             }
         }
 
@@ -28,12 +28,37 @@ function createMap(data, branch, planted) {
             // }
         });
 
-        // result_list.forEach(function (obj) {
-        //     if (obj.number > 1) {
-        //         obj.Longitude = obj.Longitude + (getRandomArbitrary(-0.005,0.005));
-        //         obj.Latitude = obj.Latitude + (getRandomArbitrary(-0.005,0.005));
-        //     }
-        // });
+        result_list.forEach(function (obj) {
+
+
+
+            if (obj.number > 1) {
+                obj["LatLon13"] = [+obj.Longitude + (getRandomArbitrary(-0.003,0.003)),
+                    +obj.Latitude + (getRandomArbitrary(-0.003,0.003))];
+
+                obj["LatLon14"] = [+obj.Longitude + (getRandomArbitrary(-0.0025,0.0025)),
+                    +obj.Latitude + (getRandomArbitrary(-0.0025,0.0025))];
+
+                obj["LatLon15"] = [+obj.Longitude + (getRandomArbitrary(-0.002,0.002)),
+                    +obj.Latitude + (getRandomArbitrary(-0.002,0.002))];
+
+                obj["LatLon16"] = [+obj.Longitude + (getRandomArbitrary(-0.0015,0.0015)),
+                    +obj.Latitude + (getRandomArbitrary(-0.0015,0.0015))];
+
+                obj["LatLon17"] = [+obj.Longitude + (getRandomArbitrary(-0.001,0.001)),
+                    +obj.Latitude + (getRandomArbitrary(-0.001,0.001))];
+
+                obj["LatLon18"] = [+obj.Longitude + (getRandomArbitrary(-0.0005,0.0005)),
+                    +obj.Latitude + (getRandomArbitrary(-0.0005,0.0005))];
+
+                obj.Longitude = +obj.Longitude + (getRandomArbitrary(-0.003,0.003));
+                obj.Latitude = +obj.Latitude + (getRandomArbitrary(-0.003,0.003));
+            }
+            else {
+                obj
+            }
+        });
+
 
         var geojson = result_list.map(function (d) {
             return {
@@ -45,94 +70,77 @@ function createMap(data, branch, planted) {
                 }
             }
         });
+        console.log(geojson);
 
 
         return geojson
 
     }
 
-    var da = nested_geojson(data);
-    var br = nested_geojson(branch);
-    var pl = nested_geojson(planted);
+    // var da = nested_geojson(data);
+    // var br = nested_geojson(branch);
+    // var pl = nested_geojson(planted);
 
-    da.forEach(function (obj) {
-            var coord = obj.geometry.coordinates;
-            coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
-            coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
-
-        obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.004,0.004)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.004,0.004))];
-
-        obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0035,0.0035)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0035,0.0035))];
-
-        obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.003,0.003)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.003,0.0003))];
-
-        obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0025,0.0025)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0025,0.0025))];
-
-        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0018,0.002))];
-
-        obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0015,0.0015)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.009,0.009))];
-
-    });
+    // da.forEach(function (obj) {
+    //
+    //     var coord = obj.geometry.coordinates;
+    //     coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
+    //     coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
+    //
+    // });
 
 
+    // br.forEach(function (obj) {
+    //     var coord = obj.geometry.coordinates;
+    //     coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
+    //     coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
+    //
+    //     obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
+    //
+    //     obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.002,0.002))];
+    //
+    //     obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0007,0.0007)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0007,0.0007))];
+    //
+    //     obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
+    //
+    //     obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
+    //
+    //     obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
+    //
+    // });
 
-    br.forEach(function (obj) {
-        var coord = obj.geometry.coordinates;
-        coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
-        coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
+    // pl.forEach(function (obj) {
+    //     var coord = obj.geometry.coordinates;
+    //     coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
+    //     coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
+    //
+    //     obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
+    //
+    //     obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.002,0.002))];
+    //
+    //     obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0007,0.0007)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0007,0.0007))];
+    //
+    //     obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
+    //
+    //     obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
+    //
+    //     obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
+    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
+    //
+    // });
 
-        obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
-
-        obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.002,0.002))];
-
-        obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0007,0.0007)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0007,0.0007))];
-
-        obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
-
-        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
-
-        obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
-
-    });
-
-    pl.forEach(function (obj) {
-        var coord = obj.geometry.coordinates;
-        coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
-        coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
-
-        obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
-
-        obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.002,0.002))];
-
-        obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0007,0.0007)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0007,0.0007))];
-
-        obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
-
-        obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
-
-        obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
-            +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
-
-    });
-
-    geojsonLayer = L.geoJson(da, {
+    geojsonLayer = L.geoJson(nested_geojson(data), {
         style: function (feature) {
             return styleForLayer(feature)
         },
@@ -157,7 +165,7 @@ function createMap(data, branch, planted) {
     });
 
 
-    geojsonLayerBranch = L.geoJson(br, {
+    geojsonLayerBranch = L.geoJson(nested_geojson(branch), {
         style: function (feature) {
             return styleForLayer(feature);
         },
@@ -178,7 +186,7 @@ function createMap(data, branch, planted) {
     });
 
 
-    geojsonLayerPlanted = L.geoJson(pl, {
+    geojsonLayerPlanted = L.geoJson(nested_geojson(planted), {
         style: function (feature) {
             return styleForLayer(feature);
         },
@@ -198,7 +206,7 @@ function createMap(data, branch, planted) {
         }
     });
 
-    
+    debugger;
     mymap.addLayer(geojsonLayer);
 
     
@@ -234,7 +242,6 @@ function createMap(data, branch, planted) {
             .text("Вид дерева: " + d.layer.feature.properties.tree_characteristics)
             .on('mouseover', function () {
                 var sel = this.id;
-                debugger;
                 geojsonLayer.setStyle(function (d) {
                     if (!(d.properties.tree_characteristics == sel)) {
                         return {fillOpacity: "0.1"};
@@ -401,54 +408,35 @@ function createMap(data, branch, planted) {
 
         geojsonLayer.eachLayer(function(layer){
             var currZoom = mymap.getZoom();
-            var arbitr = {
-                "13": [-0.003,0.003],
-                "14": [-0.0025,0.0025],
-                "15": [-0.002,0.002],
-                "16": [-0.0015,0.0015],
-                "17": [-0.001,0.001],
-                "18": [-0.0007,0.0007]
-            };
-            layer.setLatLng({
-                lat: +layer.feature.properties.Latitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
-                lng: +layer.feature.properties.Longitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1]))
-            }).redraw();
+            if (+layer.feature.properties.number > 1) {
+                layer.setLatLng({
+                    lat: +layer.feature.properties['LatLon' + currZoom][1],
+                    lng: +layer.feature.properties['LatLon' + currZoom][0]
+                }).redraw();
+            }
         });
 
         geojsonLayerBranch.eachLayer(function(layer){
             var currZoom = mymap.getZoom();
-            var arbitr = {
-                "13": [-0.003,0.003],
-                "14": [-0.0025,0.0025],
-                "15": [-0.002,0.002],
-                "16": [-0.0015,0.0015],
-                "17": [-0.001,0.001],
-                "18": [-0.0009,0.0009]
-            };
-            layer.setLatLng({
-                lat: +layer.feature.properties.Latitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
-                lng: +layer.feature.properties.Longitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1]))
-            }).redraw();
+            if (+layer.feature.properties.number > 1) {
+                layer.setLatLng({
+                    lat: +layer.feature.properties['LatLon' + currZoom][1],
+                    lng: +layer.feature.properties['LatLon' + currZoom][0]
+                }).redraw();
+            }
         });
 
 
         geojsonLayerPlanted.eachLayer(function(layer){
             var currZoom = mymap.getZoom();
-            var arbitr = {
-                "13": [-0.003,0.003],
-                "14": [-0.0025,0.0025],
-                "15": [-0.002,0.002],
-                "16": [-0.0015,0.0015],
-                "17": [-0.001,0.001],
-                "18": [-0.0009,0.0009]
-            };
-            layer.setLatLng({
-                lat: +layer.feature.properties.Latitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1])),
-                lng: +layer.feature.properties.Longitude + (getRandomArbitrary(arbitr["" + currZoom][0], arbitr["" + currZoom][1]))
-            }).redraw();
+            if (+layer.feature.properties.number > 1) {
+                layer.setLatLng({
+                    lat: +layer.feature.properties['LatLon' + currZoom][1],
+                    lng: +layer.feature.properties['LatLon' + currZoom][0]
+                }).redraw();
+            }
         });
     });
-
 
 }
 
