@@ -20,27 +20,27 @@
         d.key = swapMonthAndYear(d.key);
     });
 
-    console.log(barChartData);
-    
 
-    var margin = {top: 20, right: 20, bottom: 30, left: 40},
-        width = 350 - margin.left - margin.right,
-        height = 150 - margin.top - margin.bottom;
+    var margin = {top: 20, right: 20, bottom: 30, left: 40};
+
+    var svg = d3.select(".bars").append("svg")
+        .attr("width", "100%")
+        .attr("class", "filter")
+        .append("g");
+    
+    var width = svg.node().getBoundingClientRect().bottom;
+
+    var height = width * 0.2; // співвідношення сторін
+
+    svg.attr("height", height + 'px');
 
 // set the ranges
     var x = d3.scaleBand()
         .range([0, width])
         .padding(0.25);
     var y = d3.scaleLinear()
-        .range([height, 0]);
+        .range([height, 0])
 
-    var svg = d3.select(".bars").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .attr("class", "filter")
-        .append("g")
-        .attr("transform",
-            "tsranslate(" + margin.left + "," + margin.top + ")");
 
     var parseInputDate = d3.timeParse("%y.%m");
     var formatInputDate = d3.timeFormat("%y.%m");
@@ -48,10 +48,7 @@
     //
     var dateToTick = d3.timeFormat("%b %Y");
     var outputDateFormat = function(str) {return dateToTick(parseInputDate(str)); };
-    //
 
-    // barChartData.forEach(function(d){d.key=parseDate(d.key)});
-    // barChartData.map(function(d){return d.key})
 
     var minMonth = d3.min(barChartData.map(function(d){return d.key}));
     var x_domain = [];
@@ -59,9 +56,6 @@
     for (var i = 0; i < 12; i++) {
         x_domain.push(addMonths(minMonth, i));
     }
-
-    console.log("x_domain");
-    console.log(x_domain);
 
     x.domain(x_domain);
     y.domain([0, d3.max(barChartData, function(d) { return d.value; })]);
@@ -71,14 +65,12 @@
         .data(barChartData)
         .enter().append("rect")
         .attr("class", "bar")
-        // .attr("class", function (d) {
-        //    return d.key
-        // })
         .attr("x", function(d) { return x(d.key); })
         .attr("width", x.bandwidth())
         .attr("y", function(d) { return y(d.value); })
         .attr("height", function(d) { return height - y(d.value); })
         .attr("fill", "#b5b1af")
+        .attr("opacity", "0.3")
         .attr("position", "centered")
         .on("click", function (d) {
             returnColors();
@@ -100,7 +92,6 @@
         .on("click", function () {
         returnColors();
     });
-    
 
     
 
@@ -131,12 +122,15 @@
 
 // add the x Axis
     svg.append("g")
-        .attr("class", "x axis")
+        .attr("class", "xAxis")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).tickFormat(outputDateFormat));
+        .call(d3.axisBottom(x).tickFormat(outputDateFormat))
+        .selectAll(".tick text")
+        .call(wrap, x.bandwidth());
 
 // add the y Axis
     svg.append("g")
+        .attr("class", "yAxis")
         .call(d3.axisLeft(y));
 
     function addMonths(str, n) {
@@ -146,5 +140,31 @@
     function swapMonthAndYear(str) {
         var a = str.split(".");
         return a[1] + "." + a[0];
+    }
+
+
+    function wrap(text, width) {
+        text.each(function () {
+            var text = d3.select(this),
+                words = text.text().split(/\s+/).reverse(),
+                word,
+                line = [],
+                lineNumber = 0,
+                lineHeight = 1.1, // ems
+                y = text.attr("y"),
+                dy = parseFloat(text.attr("dy")),
+                tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+            while (word = words.pop()) {
+                line.push(word);
+                tspan.text(line.join(" "));
+                if (tspan.node().getComputedTextLength() > width) {
+                    line.pop();
+                    tspan.text(line.join(" "));
+                    line = [word];
+                    tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                }
+            }
+        });
+
     }
 } 

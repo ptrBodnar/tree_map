@@ -29,7 +29,6 @@
         #title {
             /*padding: 10px 25px 25px 10px;*/
             z-index: 1;
-            background-color: grey;
             position: absolute;
             top: 2%;
             margin-left: auto;
@@ -39,7 +38,6 @@
             flex-wrap: wrap;
             width: 30%;
             overflow-y: auto;
-            background: rgba(1, 1, 1, 0.4);
             color: white;
             border-radius: 5px;
         }
@@ -123,29 +121,43 @@
         }
 
         .mapBottomNavigation {
-            padding: 10px 25px 25px 10px;
-            z-index: 1;
             position: absolute;
             bottom: 2%;
             margin-left: auto;
             margin-right: auto;
             left: 0;
             right: 0;
-            flex-wrap: wrap;
-            width: 32%;
+            white-space: nowrap;
+            width: 90vh;
             overflow-y: auto;
             color: white;
-            background-color: rgba(1, 1, 1, 0.4);
             border-radius: 10px;
+        }
+
+
+        g.xAxis line {
+            stroke: rgba(0, 0 , 0, 0);
+        }
+
+        path.domain {
+            stroke: rgba(0, 0 , 0, 0);
+        }
+
+        .bar:hover {
+            opacity: 1;
+            cursor: pointer;
         }
 
         .button, .bars {
             display: inline-block;
             vertical-align: middle;
-            padding-inline-end: 0px;
-            padding-block-end: 0px;
-            padding-inline-start: 0px;
         }
+
+        .bars {
+            width: 80%;
+        }
+
+
 
         .button {
             background-color: rgba(0, 0, 0, 0);
@@ -158,9 +170,9 @@
             cursor: pointer;
         }
 
-        .x.axis .tick text {
-            transform: rotate(-90deg) translate(-28px);
-        }
+        /*.x.axis .tick text {*/
+            /*transform: rotate(-90deg) translate(-28px);*/
+        /*}*/
 
         .tick text {
             fill: white;
@@ -181,19 +193,23 @@
     <div id="mapid"></div>
     <div class="mystyle"></div>
     <div class="mapBottomNavigation">
-        <h4>Натисніть на стовпчик, щоб отримати точки лише за один місяць</h4>
+        <!--<h4>Натисніть на стовпчик, щоб отримати точки лише за один місяць</h4>-->
         <div class="bars"></div>
-        <button title="Прибрати фільтри" class="button"><img src="image/refresh-left-arrow.svg" alt="Повернути усі точки" width="25px" height="25px"></button>
+        <img class="button" src="image/refresh-left-arrow.svg" alt="Повернути усі точки" width="25px" height="25px">
     </div>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+<!--<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"-->
+        <!--integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="-->
+        <!--crossorigin=""></script>-->
+<!--<script src="https://d3js.org/d3.v4.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>-->
+<script src="lib/leaflet.js"
         integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
         crossorigin=""></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-<script src="js/moment.min.js"></script>
-<script src="js/lodash.js"></script>
+<script src="lib/d3.v4.min.js"></script>
+<script src="lib/moment.min.js"></script>
+<script src="lib/lodash.js"></script>
 
 <script src="js/main.js"></script>
 <script src="js/barFilter.js"></script>

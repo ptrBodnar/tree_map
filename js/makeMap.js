@@ -77,89 +77,11 @@ function createMap(data, branch, planted) {
 
     }
 
-    // var da = nested_geojson(data);
-    // var br = nested_geojson(branch);
-    // var pl = nested_geojson(planted);
-
-    // da.forEach(function (obj) {
-    //
-    //     var coord = obj.geometry.coordinates;
-    //     coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
-    //     coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
-    //
-    // });
-
-
-    // br.forEach(function (obj) {
-    //     var coord = obj.geometry.coordinates;
-    //     coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
-    //     coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
-    //
-    //     obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
-    //
-    //     obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.002,0.002))];
-    //
-    //     obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0007,0.0007)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0007,0.0007))];
-    //
-    //     obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
-    //
-    //     obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
-    //
-    //     obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
-    //
-    // });
-
-    // pl.forEach(function (obj) {
-    //     var coord = obj.geometry.coordinates;
-    //     coord[1] = coord[1] + (getRandomArbitrary(-0.003,0.003));
-    //     coord[0] = coord[0] + (getRandomArbitrary(-0.003,0.003));
-    //
-    //     obj.properties["LatLon13"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.005,0.005)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.005,0.005))];
-    //
-    //     obj.properties["LatLon14"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.002,0.002)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.002,0.002))];
-    //
-    //     obj.properties["LatLon15"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0007,0.0007)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0007,0.0007))];
-    //
-    //     obj.properties["LatLon16"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0006,0.0006)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0006,0.0006))];
-    //
-    //     obj.properties["LatLon17"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
-    //
-    //     obj.properties["LatLon18"] = [+obj.properties.Longitude + (getRandomArbitrary(-0.0001,0.0001)),
-    //         +obj.properties.Latitude + (getRandomArbitrary(-0.0001,0.0001))];
-    //
-    // });
-
     geojsonLayer = L.geoJson(nested_geojson(data), {
         style: function (feature) {
             return styleForLayer(feature)
         },
         pointToLayer: function (feature, latlng) {
-            // var sumCut = 0;
-            // feature.properties.values.forEach(function (d) {
-            //     sumCut += +d.was_cut;
-            // });
-            // var sumNumber = 0;
-            // feature.properties.values.forEach(function (d) {
-            //     sumNumber += +d.number
-            // })
-            //
-            // if (sumNumber < 3) {
-            //     sumNumber = 3;
-            // }
-            // if (sumNumber > 15) {
-            //     sumNumber = 15;
-            // }
             return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.75});
         }
     });
@@ -170,17 +92,6 @@ function createMap(data, branch, planted) {
             return styleForLayer(feature);
         },
         pointToLayer: function (feature, latlng) {
-            // var sumNumber = 0;
-            // feature.properties.values.forEach(function (d) {
-            //     sumNumber += +d.number
-            // })
-            //
-            // if (sumNumber < 3) {
-            //     sumNumber = 3;
-            // }
-            // if (sumNumber > 15) {
-            //     sumNumber = 15;
-            // }
             return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.5});
         }
     });
@@ -191,26 +102,12 @@ function createMap(data, branch, planted) {
             return styleForLayer(feature);
         },
         pointToLayer: function (feature, latlng) {
-            // var sumNumber = 0;
-            // feature.properties.values.forEach(function (d) {
-            //     sumNumber += +d.number
-            // })
-            //
-            // if (sumNumber < 3) {
-            //     sumNumber = 3;
-            // }
-            // if (sumNumber > 15) {
-            //     sumNumber = 15;
-            // }
             return new L.CircleMarker(latlng, {radius: 4, fillOpacity: 0.5});
         }
     });
 
-    debugger;
     mymap.addLayer(geojsonLayer);
-
     
-
     overlayMaps = {
         "Зрубування дерев": geojsonLayer,
         "Обрізання дерев": geojsonLayerBranch,
