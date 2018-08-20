@@ -181,11 +181,15 @@
 
         .button, .bars {
             display: inline-block;
-            vertical-align: middle;
+            /*vertical-align: middle;*/
         }
 
         .bars {
             width: 80%;
+        }
+
+        .button img {
+            margin-bottom: 20px;
         }
 
 
@@ -227,9 +231,13 @@
     <div class="mystyle"></div>
     <div class="mapBottomNavigation">
         <!--<h4>Натисніть на стовпчик, щоб отримати точки лише за один місяць</h4>-->
-        <div class="bars"></div>
-        <button  class="button" title="Прибрати фільтр"><img src="image/refresh-left-arrow.svg"
-                     alt="Повернути усі точки" width="25px" height="25px"></button>
+        <div class="bars">
+        </div>
+        <button  class="button"
+                 title="Прибрати фільтр"><img
+                src="image/refresh-left-arrow.svg"
+                alt="Повернути усі точки" width="25px" height="25px">
+        </button>
     </div>
 </div>
 

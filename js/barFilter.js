@@ -3,8 +3,33 @@
  */
 
  function createBar(data, branch, planted) {
+    //
+// D3 locale change
+//
+    d3.timeFormatDefaultLocale({
+        "decimal": ".",
+        "thousands": " ",
+        "grouping": [3],
+        "currency": ["грн", ""],
+        "dateTime": "%a %b %e %X %Y",
+        "date": "%d.%m.%Y",
+        "time": "%H:%M:%S",
+        "periods": ["AM", "PM"],
+        "days": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
+        "shortDays": ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+        "months": ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+        "shortMonths": ["січ", "лют", "бер", "кві", "тра", "чер", "лип", "сер", "вер", "жов", "лис", "гру"]
+    });
+//
+    var formatMonth = d3.timeFormat("%b");
+    var formatYear = d3.timeFormat("%Y");
 
-   d3.selectAll(".bars *").remove();
+    function multiFormat(date) {
+        return (d3.timeYear(date) < date ? formatMonth : formatYear)(date);
+    }
+
+
+   d3.selectAll(".bars svg").remove();
 
     data = data
         .filter(function(d){return d.date_UTF !== "NotYet" && d.date_UTF !== "1"})
@@ -21,16 +46,18 @@
     });
 
 
-    var margin = {top: 20, right: 20, bottom: 30, left: 40};
+    var margin = {top: 0, right: 0, bottom: 0, left: 0};
 
     var svg = d3.select(".bars").append("svg")
         .attr("width", "100%")
         .attr("class", "filter")
         .append("g");
     
-    var width = svg.node().getBoundingClientRect().bottom;
+    // var width = svg.node().getBoundingClientRect().bottom;
+    // var height = width * 0.16; // співвідношення сторін
 
-    var height = width * 0.2; // співвідношення сторін
+    var width = 450;
+    var height = 100;
 
     svg.attr("height", height + 'px');
 
@@ -47,7 +74,10 @@
 
     //
     var dateToTick = d3.timeFormat("%b %Y");
-    var outputDateFormat = function(str) {return dateToTick(parseInputDate(str)); };
+    var outputDateFormat = function(str) {
+        debugger;
+        return dateToTick(parseInputDate(str));
+    };
 
 
     var minMonth = d3.min(barChartData.map(function(d){return d.key}));
