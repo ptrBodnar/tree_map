@@ -48,13 +48,13 @@
         }
 
         .mystyle {
-            display: flex;
-            flex-direction: column;
-            padding: 10px 25px 25px 10px;
+            /*display: flex;
+            flex-direction: column;*/
+           /* padding: 10px 25px 25px 10px;*/
             z-index: 1;
             position: absolute;
-            top: 25%;
-            left: 3%;
+            top: 32%;
+            right: 0%;
             display: none;
             flex-wrap: wrap;
             width: 30%;
@@ -104,6 +104,7 @@
             line-height: 18px;
             color: #555;
             border-radius: 10px;
+            font-size: 17px;
         }
 
         .legend i {
@@ -114,11 +115,41 @@
             opacity: 0.7;
         }
 
-        .leaflet-top, .leaflet-right, .leaflet-control-layers {
-            display: flex;
-            flex-direction: column;
-            border-radius: 10px; !important
+        .xAxis > g:nth-child(13) > text:nth-child(2), button.button {
+            display:inline-block;
         }
+
+        button.button {
+            margin-right:10px;
+        }
+
+
+        .leaflet-top, .leaflet-right, .leaflet-control-layers, .mystyle {
+            display: flex !important;
+            flex-direction: column !important;
+            border-radius: 10px !important;
+            background-color: rgba(1, 1, 1, 0.4);
+        }
+
+        div.leaflet-control-layers, div.info {
+            background-color: rgba(1, 1, 1, 0.4);
+            color:#b5b1af;
+        }
+
+        div.leaflet-control-layers input {
+            display: none;
+        }
+
+        .leaflet-control-layers-base > label > div > span {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .leaflet-control-layers-base > label > div > span:hover {
+            color: white;
+            cursor: pointer;
+        }
+
+
 
         .mapBottomNavigation {
             position: absolute;
@@ -179,8 +210,10 @@
         }
 
         .mapBottomNavigation h4 {
-            text-align: center;
+            /*text-align: center;*/
             color: #b5b1af;
+            position: absolute;
+            bottom: 60%;
         }
 
     </style>
@@ -193,18 +226,13 @@
     <div id="mapid"></div>
     <div class="mystyle"></div>
     <div class="mapBottomNavigation">
-        <h4>Натисніть на стовпчик, щоб отримати точки лише за один місяць</h4>
+        <!--<h4>Натисніть на стовпчик, щоб отримати точки лише за один місяць</h4>-->
         <div class="bars"></div>
         <button  class="button" title="Прибрати фільтр"><img src="image/refresh-left-arrow.svg"
                      alt="Повернути усі точки" width="25px" height="25px"></button>
     </div>
 </div>
 
-<!--<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"-->
-        <!--integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="-->
-        <!--crossorigin=""></script>-->
-<!--<script src="https://d3js.org/d3.v4.min.js"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>-->
 <script src="lib/leaflet.js"
         integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
         crossorigin=""></script>

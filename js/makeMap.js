@@ -116,9 +116,6 @@ function createMap(data, branch, planted) {
 
     L.control.layers(overlayMaps,null,{collapsed:false}).addTo(mymap);
 
-    d3.select("#title").append("h1")
-        .text("Зрубування дерев");
-
 
     geojsonLayer.on("click", function (d) {
 
@@ -187,24 +184,21 @@ function createMap(data, branch, planted) {
         addPopUp(e);
         d3.selectAll("#title *").remove();
         if (e.name == 'Зрубування дерев') {
-            d3.select("#title").append("h1")
-                .text(e.name);
+
 
             d3.select("div.mystyle").style("display", "none");
             d3.selectAll(".mystyle *").remove();
             createBar(data);
         }
         if (e.name == 'Обрізання дерев') {
-            d3.select("#title").append("h1")
-                .text(e.name);
+
 
             d3.select("div.mystyle").style("display", "none");
             d3.selectAll(".mystyle *").remove();
             createBar(branch);
         }
         if (e.name == 'Висадження нових дерев') {
-            d3.select("#title").append("h1")
-                .text(e.name);
+
 
             d3.select("div.mystyle").style("display", "none");
             d3.selectAll(".mystyle *").remove();
