@@ -52,12 +52,14 @@
         .attr("width", "100%")
         .attr("class", "filter")
         .append("g");
-    
-    // var width = svg.node().getBoundingClientRect().bottom;
-    // var height = width * 0.16; // співвідношення сторін
 
-    var width = 450;
-    var height = 100;
+    var width = d3.select("div.bars")._groups[0][0].getBoundingClientRect().width;
+    var height = width * 0.16; // співвідношення сторін
+
+    console.log(width);
+
+    // var width = 450;
+    // var height = 100;
 
     svg.attr("height", height + 'px');
 
@@ -99,6 +101,7 @@
         .attr("width", x.bandwidth())
         .attr("y", function(d) { return y(d.value); })
         .attr("height", function(d) { return height - y(d.value); })
+        .attr("transform", "translate(0," + 40 + ")")
         .attr("fill", "#b5b1af")
         .attr("opacity", "0.3")
         .attr("position", "centered")
@@ -153,7 +156,7 @@
 // add the x Axis
     svg.append("g")
         .attr("class", "xAxis")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + 120 + ")")
         .call(d3.axisBottom(x).tickFormat(outputDateFormat))
         .selectAll(".tick text")
         .call(wrap, x.bandwidth());
