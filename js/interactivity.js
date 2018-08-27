@@ -21,13 +21,13 @@ function addPopUp(e) {
             }
         );
 
-        d3.select(".mystyle").append("p").attr("class", "act").text(function (dd) {
+        d3.select(".mystyle").append("p").attr("class", "order").text(function (dd) {
                 if (d.layer.feature.properties.name_who_ordered !== 'unknown'
                     && typeof d.layer.feature.properties.name_who_ordered !== 'undefined') {
                     return "Ім'я/Назва замовника: " + d.layer.feature.properties.name_who_ordered
                 }
                 else {
-                    d3.select("p.act").remove();
+                    d3.select("p.order").remove();
                 }
             }
         );

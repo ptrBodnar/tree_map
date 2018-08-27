@@ -22,10 +22,10 @@
             background-color:#080808;
         }
 
-        div#text-description {
-            margin-block-start: 5em;
-            margin-block-end: 5em;
-        }
+        /*div#text-description {*/
+            /*margin-block-start: 5em;*/
+            /*margin-block-end: 5em;*/
+        /*}*/
 
         p.text {
             width: 55%;
@@ -75,6 +75,8 @@
 
         .wrapper {
             position: relative;
+            margin-block-start: 5em;
+            margin-block-end: 5em;
         }
 
         .dot {
@@ -336,6 +338,20 @@
         </div>
 </div>
 
+<div class="wrapper">
+    <div id="mapid"></div>
+    <div class="mystyle"></div>
+    <div class="mapBottomNavigation">
+        <div class="bars">
+        </div>
+        <button  class="button"
+                 title="Прибрати фільтр"><img
+                src="image/refresh-left-arrow.svg"
+                alt="Повернути усі точки" width="25px" height="25px">
+        </button>
+    </div>
+</div>
+
 <div id="text-description">
     <p class="text">Інтерактивна карта зелених насаджень у місті Кропивницькому на основі даних
         Кропивницької міської ради. На карті зображено дерева, які зрізали, обрізали та висаджували за
@@ -366,19 +382,6 @@
 
 </div>
 
-<div class="wrapper">
-    <div id="mapid"></div>
-    <div class="mystyle"></div>
-    <div class="mapBottomNavigation">
-        <div class="bars">
-        </div>
-        <button  class="button"
-                 title="Прибрати фільтр"><img
-                src="image/refresh-left-arrow.svg"
-                alt="Повернути усі точки" width="25px" height="25px">
-        </button>
-    </div>
-</div>
     <div id="donors-mob">
         <div></div>
         <img style="width:100%" src="image/logo/USAID.png">
