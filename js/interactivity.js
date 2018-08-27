@@ -11,6 +11,28 @@ function addPopUp(e) {
         d3.select(".mystyle").append("p").attr("class", "total").text(
             "Адреса: " + d.layer.feature.properties.tree_adress_shorten);
 
+        d3.select(".mystyle").append("p").attr("class", "act").text(function (dd) {
+            if (typeof d.layer.feature.properties.act_number !== 'undefined') {
+                return "Номер акту: " + d.layer.feature.properties.act_number
+            }
+            else {
+                d3.select("p.act").remove();
+            }
+            }
+        );
+
+        d3.select(".mystyle").append("p").attr("class", "act").text(function (dd) {
+                if (d.layer.feature.properties.name_who_ordered !== 'unknown'
+                    && typeof d.layer.feature.properties.name_who_ordered !== 'undefined') {
+                    return "Ім'я/Назва замовника: " + d.layer.feature.properties.name_who_ordered
+                }
+                else {
+                    d3.select("p.act").remove();
+                }
+            }
+        );
+
+
         d3.select(".mystyle")
             .append("p")
             .attr("class", "tree")

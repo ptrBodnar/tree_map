@@ -77,7 +77,6 @@
     //
     var dateToTick = d3.timeFormat("%b %Y");
     var outputDateFormat = function(str) {
-        debugger;
         return dateToTick(parseInputDate(str));
     };
 

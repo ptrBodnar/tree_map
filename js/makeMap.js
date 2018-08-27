@@ -130,6 +130,12 @@ function createMap(data, branch, planted) {
         d3.select(".mystyle").append("p").attr("class", "total").text(
             "Адреса: " + d.layer.feature.properties.tree_adress_shorten);
 
+        d3.select(".mystyle").append("p").attr("class", "act").text(
+            "Номер акту: " + d.layer.feature.properties.act_number);
+
+        d3.select(".mystyle").append("p").attr("class", "order").text(
+            "Ім'я/Назва замовника: " + d.layer.feature.properties.name_who_ordered);
+
         d3.select(".mystyle").append("p")
             .attr("id", d.layer.feature.properties.tree_characteristics)
             .attr("class", "tree")
