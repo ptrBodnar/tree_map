@@ -233,7 +233,7 @@ function createMap(data, branch, planted) {
     var legend2 = L.control({position: 'topright'});
     legend2.onAdd = function (mymap) {
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = ["#ac3f00", "#ac9500"],
+            grades = ["#c90737", "#c95107"],
             labels = ["Обрізали гілки","Ще не обрізали"];
         // loop through our density intervals and generate a label with a colored square for each interval
         for (var i = 0; i < grades.length; i++) {
@@ -267,10 +267,10 @@ function createMap(data, branch, planted) {
         if (eventLayer.name === 'Обрізання дерев') {
             geojsonLayerBranch.setStyle(function (feature) {
                 if (feature.properties.was_cut == 'true') {
-                    return {fillColor: "#ac3f00", color: "rgba(0, 0, 0, 0);"};
+                    return {fillColor: "#c90737", color: "rgba(0, 0, 0, 0);"};
                 }
                 else {
-                    return {fillColor: "#ac9500", color: "rgba(0, 0, 0, 0);"} ;
+                    return {fillColor: "#c95107", color: "rgba(0, 0, 0, 0);"} ;
                 }
             });
             this.removeControl(legend1);

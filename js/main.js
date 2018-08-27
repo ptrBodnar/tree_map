@@ -19,8 +19,8 @@ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z
 
 
 
-var color = d3.scaleLinear().domain([0, 10])
-    .range(['#ac3f00', '#33981b']);
+// var color = d3.scaleLinear().domain([0, 10])
+//     .range(['#ac3f00', '#33981b']);
 
 function styleForLayer(feature) {
 
