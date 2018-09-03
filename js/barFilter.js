@@ -106,6 +106,7 @@
         .attr("position", "centered")
         .on("click", function (d) {
             returnColors();
+            d3.select(this).attr("class", "selectedBar");
             geojsonLayer.setStyle(function(feature){
                 if (!(feature.properties.date_UTF.split(".")[1] === d.key.split(".")[1]))
                     return {fillColor: 'rgba(0,0,0,0)'}
@@ -127,7 +128,9 @@
 
     
 
-    function returnColors() {
+    function returnColors(smth) {
+
+        d3.select(".selectedBar").attr("class", "#bar");
 
         geojsonLayer.setStyle(function(feature){
             return styleForLayer(feature);

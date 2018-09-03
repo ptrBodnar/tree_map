@@ -70,8 +70,6 @@ function createMap(data, branch, planted) {
                 }
             }
         });
-        console.log(geojson);
-
 
         return geojson
 
@@ -201,6 +199,16 @@ function createMap(data, branch, planted) {
     }
     setParent(htmlObjectLegend, b);
 
+    d3.select(".mystyle").append("h3").text(
+        "Що робити?"
+    );
+
+    d3.select(".mystyle").append("p").text(
+        "Натискайте на точки для того, щоб побачити детальну інформацію про конкретне дерево. " +
+        "Також тисніть на стовпці, щоб відфільтрувати лише точки за один місяць."
+    );
+
+
 
 
     geojsonLayer.on("click", function (d) {
@@ -277,6 +285,13 @@ function createMap(data, branch, planted) {
             .enter()
             .append("div")
             .attr("class", "element");
+    });
+
+
+    d3.selectAll(".leaflet-control-layers-selector").each(function(d,i) {
+        if (this.checked == true) {
+            console.log(this);
+        }
     });
 
 

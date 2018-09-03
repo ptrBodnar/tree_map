@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="acc62718-f987-4600-a522-f3a274638e64" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/styles/style.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/image/return.svg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterPath="$PROJECT_DIR$/data/.ipynb_checkpoints/Untitled-checkpoint.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/refresh-left-arrow.svg" afterPath="$PROJECT_DIR$/image/refresh-left-arrow.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/barFilter.js" afterPath="$PROJECT_DIR$/js/barFilter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/makeMap.js" afterPath="$PROJECT_DIR$/js/makeMap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/styles/style.css" afterPath="$PROJECT_DIR$/styles/style.css" />
     </list>
     <ignored path="mapKropyvnytskyi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +28,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
+            <state relative-caret-position="1854">
               <caret line="103" column="27" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -49,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/styles/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="307" column="20" selection-start-line="307" selection-start-column="20" selection-end-line="307" selection-end-column="20" />
+            <state relative-caret-position="446">
+              <caret line="318" column="0" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,7 +56,7 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
+            <state relative-caret-position="396">
               <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
               <folding>
                 <marker date="1535994790170" expanded="true" signature="973:975" placeholder="{&quot;attribution&quot;: '&amp;copy; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; &amp;copy; &lt;a href=&quot;http://cartodb.com/attributions&quot;&gt;CartoDB&lt;/a&gt;'...}" />
@@ -71,16 +65,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="makeMap.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="makeMap.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/makeMap.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="230" column="10" selection-start-line="230" selection-start-column="10" selection-end-line="230" selection-end-column="10" />
+            <state relative-caret-position="373">
+              <caret line="292" column="28" selection-start-line="292" selection-start-column="28" selection-end-line="292" selection-end-column="28" />
               <folding>
-                <marker date="1536009872211" expanded="true" signature="4798:4809" placeholder="..." />
-                <marker date="1536009872211" expanded="true" signature="5434:5445" placeholder="..." />
-                <marker date="1536009872211" expanded="true" signature="6015:6026" placeholder="..." />
-                <marker date="1536009872211" expanded="true" signature="10880:10891" placeholder="..." />
+                <marker date="1536012706515" expanded="true" signature="89:15742" placeholder="{...}" />
+                <marker date="1536012706515" expanded="true" signature="4767:4778" placeholder="..." />
+                <marker date="1536012706515" expanded="true" signature="5403:5414" placeholder="..." />
+                <marker date="1536012706515" expanded="true" signature="5984:5995" placeholder="..." />
+                <marker date="1536012706515" expanded="true" signature="11317:11328" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -89,8 +84,8 @@
       <file leaf-file-name="interactivity.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/interactivity.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="23" column="69" selection-start-line="23" selection-start-column="69" selection-end-line="32" selection-end-column="10" />
+            <state relative-caret-position="36">
+              <caret line="2" column="21" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -99,8 +94,8 @@
       <file leaf-file-name="barFilter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/barFilter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2790">
-              <caret line="157" column="28" selection-start-line="157" selection-start-column="28" selection-end-line="157" selection-end-column="28" />
+            <state relative-caret-position="203">
+              <caret line="106" column="18" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="18" />
               <folding>
                 <element signature="n#!!doc;n#createBar#0" expanded="false" />
               </folding>
@@ -132,12 +127,12 @@
         <option value="$PROJECT_DIR$/data/tree_planted_2.csv" />
         <option value="$PROJECT_DIR$/data/cleaned_tree_2_2.csv" />
         <option value="$PROJECT_DIR$/deleteme.txt" />
-        <option value="$PROJECT_DIR$/js/interactivity.js" />
-        <option value="$PROJECT_DIR$/js/barFilter.js" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/makeMap.js" />
+        <option value="$PROJECT_DIR$/js/barFilter.js" />
+        <option value="$PROJECT_DIR$/js/interactivity.js" />
         <option value="$PROJECT_DIR$/styles/style.css" />
+        <option value="$PROJECT_DIR$/js/makeMap.js" />
       </list>
     </option>
   </component>
@@ -349,7 +344,7 @@
       <workItem from="1535481045717" duration="110000" />
       <workItem from="1535736154911" duration="1434000" />
       <workItem from="1535965787453" duration="21411000" />
-      <workItem from="1536006988663" duration="2933000" />
+      <workItem from="1536006988663" duration="5687000" />
     </task>
     <task id="LOCAL-00001" summary="Карта з трьома шарами">
       <created>1532604646255</created>
@@ -397,7 +392,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324510000" />
+    <option name="totallyTimeSpent" value="327264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -483,10 +478,11 @@
         <state relative-caret-position="594">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="46" selection-end-column="8" />
           <folding>
-            <marker date="1536009872211" expanded="true" signature="4798:4809" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="5434:5445" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="6015:6026" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="10880:10891" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="89:15742" placeholder="{...}" />
+            <marker date="1536012706515" expanded="true" signature="4767:4778" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5403:5414" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5984:5995" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="11317:11328" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -547,10 +543,11 @@
         <state relative-caret-position="1926">
           <caret line="109" column="77" selection-start-line="109" selection-start-column="77" selection-end-line="109" selection-end-column="77" />
           <folding>
-            <marker date="1536009872211" expanded="true" signature="4798:4809" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="5434:5445" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="6015:6026" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="10880:10891" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="89:15742" placeholder="{...}" />
+            <marker date="1536012706515" expanded="true" signature="4767:4778" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5403:5414" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5984:5995" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="11317:11328" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -593,10 +590,11 @@
         <state relative-caret-position="432">
           <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
           <folding>
-            <marker date="1536009872211" expanded="true" signature="4798:4809" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="5434:5445" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="6015:6026" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="10880:10891" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="89:15742" placeholder="{...}" />
+            <marker date="1536012706515" expanded="true" signature="4767:4778" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5403:5414" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5984:5995" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="11317:11328" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -633,10 +631,11 @@
         <state relative-caret-position="432">
           <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
           <folding>
-            <marker date="1536009872211" expanded="true" signature="4798:4809" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="5434:5445" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="6015:6026" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="10880:10891" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="89:15742" placeholder="{...}" />
+            <marker date="1536012706515" expanded="true" signature="4767:4778" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5403:5414" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5984:5995" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="11317:11328" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -690,10 +689,11 @@
         <state relative-caret-position="702">
           <caret line="41" column="10" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
           <folding>
-            <marker date="1536009872211" expanded="true" signature="4798:4809" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="5434:5445" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="6015:6026" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="10880:10891" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="89:15742" placeholder="{...}" />
+            <marker date="1536012706515" expanded="true" signature="4767:4778" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5403:5414" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5984:5995" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="11317:11328" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -839,13 +839,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+          <folding>
+            <marker date="1535994790170" expanded="true" signature="973:975" placeholder="{&quot;attribution&quot;: '&amp;copy; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; &amp;copy; &lt;a href=&quot;http://cartodb.com/attributions&quot;&gt;CartoDB&lt;/a&gt;'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/interactivity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/barFilter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2790">
-          <caret line="157" column="28" selection-start-line="157" selection-start-column="28" selection-end-line="157" selection-end-column="28" />
+        <state relative-caret-position="203">
+          <caret line="106" column="18" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="18" />
           <folding>
             <element signature="n#!!doc;n#createBar#0" expanded="false" />
           </folding>
@@ -854,7 +873,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="1854">
           <caret line="103" column="27" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -868,42 +887,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/styles/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-          <folding>
-            <marker date="1535994790170" expanded="true" signature="973:975" placeholder="{&quot;attribution&quot;: '&amp;copy; &lt;a href=&quot;http://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; &amp;copy; &lt;a href=&quot;http://cartodb.com/attributions&quot;&gt;CartoDB&lt;/a&gt;'...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/interactivity.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="23" column="69" selection-start-line="23" selection-start-column="69" selection-end-line="32" selection-end-column="10" />
+        <state relative-caret-position="446">
+          <caret line="318" column="0" selection-start-line="318" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/makeMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="230" column="10" selection-start-line="230" selection-start-column="10" selection-end-line="230" selection-end-column="10" />
+        <state relative-caret-position="373">
+          <caret line="292" column="28" selection-start-line="292" selection-start-column="28" selection-end-line="292" selection-end-column="28" />
           <folding>
-            <marker date="1536009872211" expanded="true" signature="4798:4809" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="5434:5445" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="6015:6026" placeholder="..." />
-            <marker date="1536009872211" expanded="true" signature="10880:10891" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="89:15742" placeholder="{...}" />
+            <marker date="1536012706515" expanded="true" signature="4767:4778" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5403:5414" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="5984:5995" placeholder="..." />
+            <marker date="1536012706515" expanded="true" signature="11317:11328" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/styles/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="307" column="20" selection-start-line="307" selection-start-column="20" selection-end-line="307" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>

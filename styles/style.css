@@ -316,8 +316,14 @@ div#layerControl span {
     /*border-bottom: 3px dotted #c95107;*/
 }
 
+
+
 .selectedBaseLayer {
     border-bottom: 3px dotted #c95107;
+}
+
+.selectedBar {
+    fill: black;
 }
 
 .unselectedBaseLayer {
