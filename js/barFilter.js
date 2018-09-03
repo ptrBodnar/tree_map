@@ -102,7 +102,7 @@
         .attr("height", function(d) { return height - y(d.value); })
         .attr("transform", "translate(0," + 40 + ")")
         .attr("fill", "#b5b1af")
-        .attr("opacity", "0.3")
+        .attr("opacity", "1")
         .attr("position", "centered")
         .on("click", function (d) {
             returnColors();
@@ -134,19 +134,19 @@
         });
         geojsonLayerBranch.setStyle(function (feature) {
             if (feature.properties.was_cut == 'true') {
-                return {fillColor: "#ac3f00", color: "rgba(0, 0, 0, 0);"};
+                return {fillColor: "#ff005a", color: "rgba(0, 0, 0, 0);"};
             }
             else {
-                return {fillColor: "#ac9500",  color: "rgba(0, 0, 0, 0);"} ;
+                return {fillColor: "#ffb74b",  color: "rgba(0, 0, 0, 0);"} ;
             }
         });
 
         geojsonLayerPlanted.setStyle(function(feature){
             if (feature.properties.was_cut == 'true') {
-                return {fillColor: "#99bb06", color: "rgba(0, 0, 0, 0);"};
+                return {fillColor: "#ff005a", color: "rgba(0, 0, 0, 0);"};
             }
             else {
-                return {fillColor: "#99bb06",  color: "rgba(0, 0, 0, 0);"} ;
+                return {fillColor: "#ffb74b",  color: "rgba(0, 0, 0, 0);"} ;
             }
         });
     }
@@ -155,6 +155,7 @@
 // add the x Axis
     svg.append("g")
         .attr("class", "xAxis")
+        .style('color', "red")
         .attr("transform", "translate(0," + 120 + ")")
         .call(d3.axisBottom(x).tickFormat(outputDateFormat))
         .selectAll(".tick text")

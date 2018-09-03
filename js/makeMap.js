@@ -114,7 +114,93 @@ function createMap(data, branch, planted) {
         "Висадження нових дерев": geojsonLayerPlanted
     };
 
-    L.control.layers(overlayMaps,null,{collapsed:false}).addTo(mymap);
+    //L.control.layers(overlayMaps,null,{collapsed:false}).addTo(mymap);
+    
+    // Try to place control outside of the map
+
+// Create the control and add it to the map;
+    var control = L.control.layers(overlayMaps,null,{collapsed:false});
+    control.addTo(mymap);
+
+
+    // Call the getContainer routine.
+    var htmlObject = control.getContainer();
+    // Get the desired parent node.
+    var a = document.getElementById('layerControl');
+
+    // Finally append that node to the new parent, recursively searching out and re-parenting nodes.
+    function setParent(el, newParent)
+    {
+        newParent.appendChild(el);
+        //d3.selectAll('div.leaflet-control-layers').remove();
+    }
+    setParent(htmlObject, a);
+
+    d3.select(".leaflet-control-layers-list").node()[0].class = 'selectedBaseLayer';
+
+    // add Treeline legend 1
+    var legend1 = L.control({position: 'topright'});
+
+    legend1.onAdd = function (mymap) {
+
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = ["#ff005a", "#ffb74b"],
+            labels = ["Зрубані дерева","Дерева які ще зрубають"];
+
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+                '<span class="dot" style="background:' + grades[i] + '"></span> ' + " " + labels[i] +'<br>';
+        }
+
+        return div;
+    };
+
+    legend1.addTo(mymap);
+
+
+    // add  legend 2
+    var legend2 = L.control({position: 'topright'});
+    legend2.onAdd = function (mymap) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = ["#ff005a", "#ffb74b"],
+            labels = ["Обрізали гілки","Ще не обрізали"];
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+                '<span class="dot" style="background:' + grades[i] + '"></span> ' + " " + labels[i] +'<br>';
+        }
+        return div;
+    };
+
+    // add  legend 3
+    var legend3 = L.control({position: 'topright'});
+    legend3.onAdd = function (mymap) {
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = ["#00e13a"],
+            labels = ["Висаджені дерева"];
+        // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHTML +=
+                '<span class="dot" style="background:' + grades[i] + '"></span> ' + " " + labels[i] +'<br>';
+        }
+        return div;
+    };
+
+    // Call the getContainer routine.
+    var htmlObjectLegend = legend1.getContainer();
+    // Get the desired parent node.
+    var b = document.getElementById('legend');
+
+    // Finally append that node to the new parent, recursively searching out and re-parenting nodes.
+    function setParent(el, newParent)
+
+    {
+        newParent.appendChild(el);
+        //d3.selectAll('div.leaflet-control-layers').remove();
+    }
+    setParent(htmlObjectLegend, b);
+
 
 
     geojsonLayer.on("click", function (d) {
@@ -133,8 +219,16 @@ function createMap(data, branch, planted) {
         d3.select(".mystyle").append("p").attr("class", "act").text(
             "Номер акту: " + d.layer.feature.properties.act_number);
 
-        d3.select(".mystyle").append("p").attr("class", "order").text(
-            "Ім'я/Назва замовника: " + d.layer.feature.properties.name_who_ordered);
+        d3.select(".mystyle").append("p").attr("class", "order").text(function (dd) {
+                if (d.layer.feature.properties.name_who_ordered !== 'unknown'
+                    && typeof d.layer.feature.properties.name_who_ordered !== 'undefined') {
+                    return "Ім'я/Назва замовника: " + d.layer.feature.properties.name_who_ordered
+                }
+                else {
+                    d3.select("p.order").remove();
+                }
+            }
+        );
 
         d3.select(".mystyle").append("p")
             .attr("id", d.layer.feature.properties.tree_characteristics)
@@ -214,54 +308,27 @@ function createMap(data, branch, planted) {
     });
 
 
-    // add Treeline legend 1
-    var legend1 = L.control({position: 'topright'});
+    // // add Treeline legend 1
+    // var legend1 = L.control({position: 'topright'});
+    //
+    // legend1.onAdd = function (mymap) {
+    //
+    //     var div = L.DomUtil.create('div', 'info legend'),
+    //         grades = ["#ff005a", "#ffb74b"],
+    //         labels = ["Зрубані дерева","Дерева які ще зрубають"];
+    //
+    //     // loop through our density intervals and generate a label with a colored square for each interval
+    //     for (var i = 0; i < grades.length; i++) {
+    //         div.innerHTML +=
+    //             '<span class="dot" style="background:' + grades[i] + '"></span> ' + " " + labels[i] +'<br>';
+    //     }
+    //
+    //     return div;
+    // };
+    //
+    // legend1.addTo(mymap);
+    //
 
-    legend1.onAdd = function (mymap) {
-
-        var div = L.DomUtil.create('div', 'info legend'),
-            grades = ["#c90737", "#c95107"],
-            labels = ["Зрубані дерева","Дерева які ще зрубають"];
-
-        // loop through our density intervals and generate a label with a colored square for each interval
-        for (var i = 0; i < grades.length; i++) {
-            div.innerHTML +=
-                '<span class="dot" style="background:' + grades[i] + '"></span> ' + " " + labels[i] +'<br>';
-        }
-
-        return div;
-    };
-
-    legend1.addTo(mymap);
-
-
-    // add  legend 2
-    var legend2 = L.control({position: 'topright'});
-    legend2.onAdd = function (mymap) {
-        var div = L.DomUtil.create('div', 'info legend'),
-            grades = ["#c90737", "#c95107"],
-            labels = ["Обрізали гілки","Ще не обрізали"];
-        // loop through our density intervals and generate a label with a colored square for each interval
-        for (var i = 0; i < grades.length; i++) {
-            div.innerHTML +=
-                '<span class="dot" style="background:' + grades[i] + '"></span> ' + " " + labels[i] +'<br>';
-        }
-        return div;
-    };
-
-    // add  legend 3
-    var legend3 = L.control({position: 'topright'});
-    legend3.onAdd = function (mymap) {
-        var div = L.DomUtil.create('div', 'info legend'),
-            grades = ["#99bb06"],
-            labels = ["Висаджені дерева"];
-        // loop through our density intervals and generate a label with a colored square for each interval
-        for (var i = 0; i < grades.length; i++) {
-            div.innerHTML +=
-                '<span class="dot" style="background:' + grades[i] + '"></span> ' + " " + labels[i] +'<br>';
-        }
-        return div;
-    };
 
     mymap.on('baselayerchange', function (eventLayer) {
         // Switch to the Permafrost legend...
@@ -269,32 +336,73 @@ function createMap(data, branch, planted) {
             this.removeControl(legend2);
             this.removeControl(legend3);
             legend1.addTo(this);
+
+            // Call the getContainer routine.
+            var htmlObjectLegend = legend1.getContainer();
+            // Get the desired parent node.
+            var b = document.getElementById('legend');
+
+            // Finally append that node to the new parent, recursively searching out and re-parenting nodes.
+            function setParent(el, newParent)
+
+            {
+                newParent.appendChild(el);
+                //d3.selectAll('div.leaflet-control-layers').remove();
+            }
+            setParent(htmlObjectLegend, b);
         }
+
         if (eventLayer.name === 'Обрізання дерев') {
             geojsonLayerBranch.setStyle(function (feature) {
                 if (feature.properties.was_cut == 'true') {
-                    return {fillColor: "#c90737", color: "rgba(0, 0, 0, 0);"};
+                    return {fillColor: "#ff005a", color: "rgba(0, 0, 0, 0);"};
                 }
                 else {
-                    return {fillColor: "#c95107", color: "rgba(0, 0, 0, 0);"} ;
+                    return {fillColor: "#ffb74b", color: "rgba(0, 0, 0, 0);"} ;
                 }
             });
             this.removeControl(legend1);
             this.removeControl(legend3);
             legend2.addTo(this);
+
+            var htmlObjectLegend = legend2.getContainer();
+            // Get the desired parent node.
+            var b = document.getElementById('legend');
+
+            // Finally append that node to the new parent, recursively searching out and re-parenting nodes.
+            function setParent(el, newParent)
+
+            {
+                newParent.appendChild(el);
+                //d3.selectAll('div.leaflet-control-layers').remove();
+            }
+            setParent(htmlObjectLegend, b);
         }
         if (eventLayer.name === 'Висадження нових дерев') {
             geojsonLayerPlanted.setStyle(function (feature) {
                 if (feature.properties.was_cut == 'true') {
-                    return {fillColor: "#99bb06", color: "rgba(0, 0, 0, 0);"};
+                    return {fillColor: "#00e13a", color: "rgba(0, 0, 0, 0);"};
                 }
                 else {
-                    return {fillColor: "#99bb06", color: "rgba(0, 0, 0, 0);"} ;
+                    return {fillColor: "#00e13a", color: "rgba(0, 0, 0, 0);"} ;
                 }
             });
             this.removeControl(legend1);
             this.removeControl(legend2);
             legend3.addTo(this);
+
+            var htmlObjectLegend = legend3.getContainer();
+            // Get the desired parent node.
+            var b = document.getElementById('legend');
+
+            // Finally append that node to the new parent, recursively searching out and re-parenting nodes.
+            function setParent(el, newParent)
+
+            {
+                newParent.appendChild(el);
+                //d3.selectAll('div.leaflet-control-layers').remove();
+            }
+            setParent(htmlObjectLegend, b);
         }
     });
 

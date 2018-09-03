@@ -11,10 +11,11 @@ var mymap = L.map('mapid').setView([48.51, 32.25], 13);
 //     accessToken: 'pk.eyJ1IjoicHRyYmRyIiwiYSI6ImNqZG12dWdtYzBwdzgyeHAweDFueGZrYTYifQ.ZJ2tgs6E94t3wBwFOyRSBQ'
 // }).addTo(mymap);
 
-L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}{r}.png', {
+var CartoDB_Positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
     subdomains: 'abcd',
-    maxZoom: 19
+    minZoom: 13,
+    maxZoom: 18
 }).addTo(mymap);
 
 
@@ -25,10 +26,10 @@ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z
 function styleForLayer(feature) {
 
     if (feature.properties.was_cut == 'True') {
-        return {fillColor: "#c90737", color: "rgba(0, 0, 0, 0);", fillOpacity: "0.75"};
+        return {fillColor: "#ff005a", color: "rgba(0, 0, 0, 0);", fillOpacity: "0.75"};
     }
     else {
-        return {fillColor: "#f25f04", color: "rgba(0, 0, 0, 0);", fillOpacity: "0.75"};
+        return {fillColor: "#ffb74b", color: "rgba(0, 0, 0, 0);", fillOpacity: "0.75"};
     }
 }
 
