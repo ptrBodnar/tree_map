@@ -327,3 +327,9 @@ div#layerControl span {
     /*margin-top: 0.5px;*/
     /*margin-bottom: 0.5px;*/
 }
+
+h3.text {
+    text-align: center;
+    vertical-align: center;
+    margin-bottom: 20px;
+}
