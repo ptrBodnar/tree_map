@@ -6,7 +6,7 @@ function createMap(data, branch, planted) {
     d3.selectAll(".leaflet-interactive").remove();
     d3.selectAll(".leaflet-control-layers-toggle").remove();
 
-
+    
 
     function nested_geojson(data) {
 

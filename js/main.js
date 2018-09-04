@@ -38,6 +38,8 @@ function getRandomArbitrary(min, max) {
 }
 
 
+
+
     d3.queue()
         .defer(d3.csv, "data/cleaned_tree_3.csv")
         .defer(d3.csv, "data/branch_2.csv")

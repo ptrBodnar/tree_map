@@ -1,5 +1,26 @@
 function addPopUp(e) {
 
+    geojsonLayer.setStyle(function(feature){
+        return styleForLayer(feature);
+    });
+    geojsonLayerBranch.setStyle(function (feature) {
+        if (feature.properties.was_cut == 'true') {
+            return {fillColor: "#ff005a", color: "rgba(0, 0, 0, 0);"};
+        }
+        else {
+            return {fillColor: "#ffb74b",  color: "rgba(0, 0, 0, 0);"} ;
+        }
+    });
+
+    geojsonLayerPlanted.setStyle(function(feature){
+        if (feature.properties.was_cut == 'true') {
+            return {fillColor: "#00e13a", color: "rgba(0, 0, 0, 0);"};
+        }
+        else {
+            return {fillColor: "#00e13a",  color: "rgba(0, 0, 0, 0);"} ;
+        }
+    });
+
     e.layer.on("click", function (d) {
         d3.select("div.mystyle").style("display", "flex");
         d3.selectAll(".mystyle *").remove();

@@ -128,7 +128,7 @@
 
     
 
-    function returnColors(smth) {
+    function returnColors() {
 
         d3.select(".selectedBar").attr("class", "#bar");
 
@@ -146,10 +146,10 @@
 
         geojsonLayerPlanted.setStyle(function(feature){
             if (feature.properties.was_cut == 'true') {
-                return {fillColor: "#ff005a", color: "rgba(0, 0, 0, 0);"};
+                return {fillColor: "#00e13a", color: "rgba(0, 0, 0, 0);"};
             }
             else {
-                return {fillColor: "#ffb74b",  color: "rgba(0, 0, 0, 0);"} ;
+                return {fillColor: "#00e13a",  color: "rgba(0, 0, 0, 0);"} ;
             }
         });
     }

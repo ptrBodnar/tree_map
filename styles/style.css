@@ -58,14 +58,8 @@ div#map {
 
 .mystyle {
     z-index: 1;
-    /*position: absolute;*/
-    /*top: 32%;*/
-    /*right: 0%;*/
     display: none;
-    /*flex-wrap: wrap;*/
     overflow-y: auto;
-    /*background: rgba(1, 1, 1, 0.4);*/
-    /*color: #b5b1af;*/
     border-radius: 5px;
     padding: 6px;
     margin-right: 10px;
