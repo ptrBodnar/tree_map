@@ -107,8 +107,8 @@ function createMap(data, branch, planted) {
     mymap.addLayer(geojsonLayer);
     
     overlayMaps = {
-        "Зрубування дерев": geojsonLayer,
-        "Обрізання дерев": geojsonLayerBranch,
+        "Видалення дерев": geojsonLayer,
+        "Обрізування гілок": geojsonLayerBranch,
         "Висадження нових дерев": geojsonLayerPlanted
     };
 
@@ -143,7 +143,7 @@ function createMap(data, branch, planted) {
 
         var div = L.DomUtil.create('div', 'info legend'),
             grades = ["#ff005a", "#ffb74b"],
-            labels = ["Зрубані дерева","Дерева які ще зрубають"];
+            labels = ["Видалені дерева","Дерева, які потребують видалення"];
 
         // loop through our density intervals and generate a label with a colored square for each interval
         for (var i = 0; i < grades.length; i++) {
@@ -162,7 +162,7 @@ function createMap(data, branch, planted) {
     legend2.onAdd = function (mymap) {
         var div = L.DomUtil.create('div', 'info legend'),
             grades = ["#ff005a", "#ffb74b"],
-            labels = ["Обрізали гілки","Ще не обрізали"];
+            labels = ["Обрізування здійснене","Обрізування не здійснене"];
         // loop through our density intervals and generate a label with a colored square for each interval
         for (var i = 0; i < grades.length; i++) {
             div.innerHTML +=
@@ -248,12 +248,12 @@ function createMap(data, branch, planted) {
                     if (!(d.properties.tree_characteristics == sel)) {
                         return {fillOpacity: "0.1"};
                     }
-                })
+                });
                 geojsonLayerBranch.setStyle(function (d) {
                     if (!(d.properties.tree_characteristics == sel)) {
                         return {fillOpacity: "0.1"};
                     }
-                })
+                });
                 geojsonLayerPlanted.setStyle(function (d) {
                     if (!(d.properties.tree_characteristics == sel)) {
                         return {fillOpacity: "0.1"};
@@ -298,14 +298,14 @@ function createMap(data, branch, planted) {
     mymap.on('baselayerchange', function (e) {
         addPopUp(e);
         d3.selectAll("#title *").remove();
-        if (e.name == 'Зрубування дерев') {
+        if (e.name == 'Видалення дерев') {
 
 
             d3.select("div.mystyle").style("display", "none");
             d3.selectAll(".mystyle *").remove();
             createBar(data);
         }
-        if (e.name == 'Обрізання дерев') {
+        if (e.name == 'Обрізування гілок') {
 
 
             d3.select("div.mystyle").style("display", "none");
@@ -347,7 +347,7 @@ function createMap(data, branch, planted) {
 
     mymap.on('baselayerchange', function (eventLayer) {
         // Switch to the Permafrost legend...
-        if (eventLayer.name === 'Зрубування дерев') {
+        if (eventLayer.name === 'Видалення дерев') {
             this.removeControl(legend2);
             this.removeControl(legend3);
             legend1.addTo(this);
@@ -367,7 +367,7 @@ function createMap(data, branch, planted) {
             setParent(htmlObjectLegend, b);
         }
 
-        if (eventLayer.name === 'Обрізання дерев') {
+        if (eventLayer.name === 'Обрізування гілок') {
             geojsonLayerBranch.setStyle(function (feature) {
                 if (feature.properties.was_cut == 'true') {
                     return {fillColor: "#ff005a", color: "rgba(0, 0, 0, 0);"};

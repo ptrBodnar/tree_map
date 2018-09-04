@@ -10,21 +10,16 @@ body {
     background-color: #fafaf8;
 }
 
-/*div#text-description {*/
-/*margin-block-start: 5em;*/
-/*margin-block-end: 5em;*/
-/*}*/
 
 p.text {
     width: 55%;
     color: #322d2a;
-    margin: 100px auto;
+    margin: auto;
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
+    margin-bottom: 20px;
     font-size: 16px;
     line-height: 1.5em;
-    font-family: "Segoe UI Light", sans-serif !important;;
+    /*font-family: "Segoe UI Light", sans-serif !important;*/
 }
 
 #mapid {
@@ -41,7 +36,7 @@ p.text {
 
 
 div.logo {
-    background-color: #a0a0a0;
+    background-color: #1e00e1;
 }
 
 div#mapScreen-right {
@@ -91,8 +86,8 @@ div#text-description {
 
 .wrapper {
     position: relative;
-    margin-block-start: 5em;
-    margin-block-end: 5em;
+    margin-top: 5em;
+    margin-bottom: 5em;
 }
 
 .dot {
@@ -104,34 +99,19 @@ div#text-description {
 
 .info {
     padding: 6px 8px;
-    /*font: 14px/16px Arial, Helvetica, sans-serif;*/
-    /*background-color: white;*/
-    /*border-radius: 5px;*/
-}
-.info h4 {
-    /*margin: 0 0 5px;*/
-    /*color: #777;*/
 }
 
-input {
-    outline: 0;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
 
 .legend {
     line-height: 18px;
-    /*color: #555;*/
-    /*border-radius: 10px;*/
     font-size: 16px;
     margin-top: 20px;
+    margin-bottom: 20px
 }
 
 div.mystyle p {
-    margin-block-start: .5em;
-    margin-block-end: .5em;
+    margin-top: .5em;
+    margin-bottom: .5em
 }
 
 .legend i {
@@ -296,7 +276,7 @@ path.domain {
     background-color: #ffffff;
     grid-column: 1/3;
     display: grid;
-    grid-template-columns: auto 220px 80px 190px 120px 220px auto;
+    grid-template-columns: auto 220px 80px 190px 220px 120px 220px auto;
 }
 
 g.tick {
@@ -340,4 +320,9 @@ div#layerControl span {
     .div.leaflet-control-layers div.leaflet-control-layers-expanded div.leaflet-control div.info {
         margin-right: 0px;
     }
+}
+
+#text-description p {
+    /*margin-top: 0.5px;*/
+    /*margin-bottom: 0.5px;*/
 }
