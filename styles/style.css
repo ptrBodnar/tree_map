@@ -11,17 +11,6 @@ body {
 }
 
 
-p.text {
-    width: 55%;
-    color: #322d2a;
-    margin: auto;
-    display: block;
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 1.5em;
-    /*font-family: "Segoe UI Light", sans-serif !important;*/
-}
-
 #mapid {
     z-index: 1;
     position: relative;
@@ -280,7 +269,6 @@ g.tick {
 
 div#layerControl {
     font-size: 1.17em;
-    margin-top: 20px;
 }
 
 div#layerControl label {
@@ -335,12 +323,11 @@ div#layerControl span {
         width: 100%;
     }
 
+    div#mapScreen-right {
+        width: 0;
+    }
 
-}
 
-#text-description p {
-    /*margin-top: 0.5px;*/
-    /*margin-bottom: 0.5px;*/
 }
 
 h3.text {
@@ -353,4 +340,15 @@ p.text a {
     text-decoration: none;
     color: #c95107;
     border-bottom: 2px dotted #cccccc;
+}
+
+p.text {
+    width: 55%;
+    color: #322d2a;
+    margin: auto;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5em;
+    /*font-family: "Segoe UI Light", sans-serif !important;*/
 }
