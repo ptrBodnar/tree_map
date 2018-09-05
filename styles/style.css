@@ -40,12 +40,14 @@ div.logo {
 }
 
 div#mapScreen-right {
-    display: flex !important;
-    flex-direction: column !important;
+    display: flex;
+    flex-direction: column;
 }
 
 div#mapScreen {
     display: flex;
+    margin-top: 10em;
+    margin-bottom: 10em;
 }
 
 div#mapScreen-right {
@@ -72,9 +74,6 @@ div.mystyle h3 {
     font-size: 1em;
 }
 
-div#text-description {
-    margin-top: 3em;
-}
 
 .tree {
     cursor: pointer;
@@ -83,7 +82,6 @@ div#text-description {
 
 .wrapper {
     position: relative;
-    margin-top: 5em;
     margin-bottom: 5em;
 }
 
@@ -321,6 +319,23 @@ div#layerControl span {
     .div.leaflet-control-layers div.leaflet-control-layers-expanded div.leaflet-control div.info {
         margin-right: 0px;
     }
+
+    div#mapScreen-right {
+        display: none;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    div#mapScreen {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    div#map {
+        width: 100%;
+    }
+
+
 }
 
 #text-description p {
@@ -332,4 +347,10 @@ h3.text {
     text-align: center;
     vertical-align: center;
     margin-bottom: 20px;
+}
+
+p.text a {
+    text-decoration: none;
+    color: #c95107;
+    border-bottom: 2px dotted #cccccc;
 }
